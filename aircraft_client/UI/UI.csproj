@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7F8CEBA9-9DC1-46D0-BA94-CD458C024E33}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <LangVersion>8.0</LangVersion>
+    <RootNamespace>aircraft_client.UI</RootNamespace>
+    <AssemblyName>aircraft_client.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO" />
+    <Reference Include="System.Linq.Expressions" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\IBaseDialogView.cs" />
+    <Compile Include="Interfaces\IBaseTupleView.cs" />
+    <Compile Include="Interfaces\IChooseLaboratoryView.cs" />
+    <Compile Include="Interfaces\IChooseMastersView.cs" />
+    <Compile Include="Interfaces\IChooseTeamView.cs" />
+    <Compile Include="Interfaces\IChooseTechnicsView.cs" />
+    <Compile Include="Interfaces\IChooseWorkersView.cs" />
+    <Compile Include="Interfaces\IDataView.cs" />
+    <Compile Include="Interfaces\IChooseView.cs" />
+    <Compile Include="Interfaces\IDirectorProductionView.cs" />
+    <Compile Include="Interfaces\IDirectorScientistsView.cs" />
+    <Compile Include="Interfaces\IDirectorSectorView.cs" />
+    <Compile Include="Interfaces\IDirectorTechnicsView.cs" />
+    <Compile Include="Interfaces\IDirectorView.cs" />
+    <Compile Include="Interfaces\IDirectorWorkersView.cs" />
+    <Compile Include="Interfaces\IDirectorWorkshopView.cs" />
+    <Compile Include="Interfaces\IEquipmentManagerView.cs" />
+    <Compile Include="Interfaces\IJobsView.cs" />
+    <Compile Include="Interfaces\ILeadWsView.cs" />
+    <Compile Include="Interfaces\ILoginView.cs" />
+    <Compile Include="Interfaces\IMasterView.cs" />
+    <Compile Include="Interfaces\IProductionChooseView.cs" />
+    <Compile Include="Interfaces\IProductionView.cs" />
+    <Compile Include="Interfaces\IScientistChooseView.cs" />
+    <Compile Include="Interfaces\IScientistView.cs" />
+    <Compile Include="Interfaces\ISectorChooseView.cs" />
+    <Compile Include="Interfaces\ISignUpView.cs" />
+    <Compile Include="Interfaces\ITeamView.cs" />
+    <Compile Include="Interfaces\ITechnicsView.cs" />
+    <Compile Include="Interfaces\IView.cs" />
+    <Compile Include="Interfaces\IWorkersView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{476efb35-84e9-42d1-923f-2d99db6d03d8}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
