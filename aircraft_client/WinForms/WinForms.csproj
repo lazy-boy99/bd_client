@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F22F3FA8-2903-4B8E-B019-96B0CAF355C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>aircraft_client.WinForms</RootNamespace>
+    <AssemblyName>WinForms</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{476EFB35-84E9-42D1-923F-2D99DB6D03D8}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UI\UI.csproj">
+      <Project>{7F8CEBA9-9DC1-46D0-BA94-CD458C024E33}</Project>
+      <Name>UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseChooseTupleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseChooseTupleForm.Designer.cs">
+      <DependentUpon>BaseChooseTupleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseDataForm.Designer.cs">
+      <DependentUpon>BaseDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseDialogForm.Designer.cs">
+      <DependentUpon>BaseDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseForm.Designer.cs">
+      <DependentUpon>ChooseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChooseLaboratoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseLaboratoryForm.Designer.cs">
+      <DependentUpon>ChooseLaboratoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChooseMasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseMasterForm.Designer.cs">
+      <DependentUpon>ChooseMasterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DirectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirectorForm.Designer.cs">
+      <DependentUpon>DirectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DirectorProductionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirectorProductionForm.Designer.cs">
+      <DependentUpon>DirectorProductionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DirectorScientistsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirectorScientistsForm.Designer.cs">
+      <DependentUpon>DirectorScientistsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DirectorSectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirectorSectorForm.Designer.cs">
+      <DependentUpon>DirectorSectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DirectorTechnicsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirectorTechnicsForm.Designer.cs">
+      <DependentUpon>DirectorTechnicsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DirectorWorkersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirectorWorkersForm.Designer.cs">
+      <DependentUpon>DirectorWorkersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DirectorWorkshopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirectorWorkshopForm.Designer.cs">
+      <DependentUpon>DirectorWorkshopForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EquipmentManagerForm.Designer.cs">
+      <DependentUpon>EquipmentManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobsForm.Designer.cs">
+      <DependentUpon>JobsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm.Designer.cs">
+      <DependentUpon>MasterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionChooseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductionChooseForm.Designer.cs">
+      <DependentUpon>ProductionChooseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductionForm.Designer.cs">
+      <DependentUpon>ProductionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScientistChooseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScientistChooseForm.Designer.cs">
+      <DependentUpon>ScientistChooseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScientistForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScientistForm.Designer.cs">
+      <DependentUpon>ScientistForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SectorChooseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SectorChooseForm.Designer.cs">
+      <DependentUpon>SectorChooseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUpForm.Designer.cs">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeamChooseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeamChooseForm.Designer.cs">
+      <DependentUpon>TeamChooseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeamForm.Designer.cs">
+      <DependentUpon>TeamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TechnicsChooseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TechnicsChooseForm.Designer.cs">
+      <DependentUpon>TechnicsChooseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TechnicsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TechnicsForm.Designer.cs">
+      <DependentUpon>TechnicsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkersChooseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkersChooseForm.Designer.cs">
+      <DependentUpon>WorkersChooseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkersForm.Designer.cs">
+      <DependentUpon>WorkersForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseChooseTupleForm.resx">
+      <DependentUpon>BaseChooseTupleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataForm.resx">
+      <DependentUpon>BaseDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDialogForm.resx">
+      <DependentUpon>BaseDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChooseForm.resx">
+      <DependentUpon>ChooseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChooseLaboratoryForm.resx">
+      <DependentUpon>ChooseLaboratoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DirectorForm.resx">
+      <DependentUpon>DirectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DirectorProductionForm.resx">
+      <DependentUpon>DirectorProductionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DirectorScientistsForm.resx">
+      <DependentUpon>DirectorScientistsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DirectorTechnicsForm.resx">
+      <DependentUpon>DirectorTechnicsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DirectorWorkersForm.resx">
+      <DependentUpon>DirectorWorkersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobsForm.resx">
+      <DependentUpon>JobsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm.resx">
+      <DependentUpon>MasterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductionChooseForm.resx">
+      <DependentUpon>ProductionChooseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductionForm.resx">
+      <DependentUpon>ProductionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScientistChooseForm.resx">
+      <DependentUpon>ScientistChooseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SectorChooseForm.resx">
+      <DependentUpon>SectorChooseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUpForm.resx">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamChooseForm.resx">
+      <DependentUpon>TeamChooseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamForm.resx">
+      <DependentUpon>TeamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TechnicsChooseForm.resx">
+      <DependentUpon>TechnicsChooseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TechnicsForm.resx">
+      <DependentUpon>TechnicsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkersChooseForm.resx">
+      <DependentUpon>WorkersChooseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkersForm.resx">
+      <DependentUpon>WorkersForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58F98853-0E7F-46C2-A5B8-2470FAA42D5E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <LangVersion>8.0</LangVersion>
+    <AppDesignerFolder>Logic</AppDesignerFolder>
+    <RootNamespace>aircraft_client.Logic</RootNamespace>
+    <AssemblyName>aircraft_client.Logic</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LightInject, Version=6.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.6.3.3\lib\netstandard1.1\LightInject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationController\ApplicationController.cs" />
+    <Compile Include="ApplicationController\IApplicationController.cs" />
+    <Compile Include="Containers\IContainer.cs" />
+    <Compile Include="Containers\ContainerAdapter.cs" />
+    <Compile Include="Presenters\BaseChoosePresenter.cs" />
+    <Compile Include="Presenters\ChooseLaboratoryPresenter.cs" />
+    <Compile Include="Presenters\ChoosePresenter.cs" />
+    <Compile Include="Presenters\ChooseScientistPresenter.cs" />
+    <Compile Include="Presenters\DirectorProductionPresenter.cs" />
+    <Compile Include="Presenters\DirectorScientistsPresenter.cs" />
+    <Compile Include="Presenters\DirectorSectorPresenter.cs" />
+    <Compile Include="Presenters\DirectorWorkersPresenter.cs" />
+    <Compile Include="Presenters\DirectorWorkshopPresenter.cs" />
+    <Compile Include="Presenters\EquipmentManagerPresenter.cs" />
+    <Compile Include="Presenters\DirectorTechnicsPresenter.cs" />
+    <Compile Include="Presenters\DirectorPresenter.cs" />
+    <Compile Include="Presenters\JobsPresenter.cs" />
+    <Compile Include="Presenters\LeadWsPresenter.cs" />
+    <Compile Include="Presenters\LoginPresenter.cs" />
+    <Compile Include="Presenters\MasterPresenter.cs" />
+    <Compile Include="Presenters\MastersChoosePresenter.cs" />
+    <Compile Include="Presenters\ProductionChoosePresenter.cs" />
+    <Compile Include="Presenters\ProductionPresenter.cs" />
+    <Compile Include="Presenters\ScientistPresenter.cs" />
+    <Compile Include="Presenters\BasePresenter.cs" />
+    <Compile Include="Presenters\IPresenter.cs" />
+    <Compile Include="Presenters\SectorChoosePresenter.cs" />
+    <Compile Include="Presenters\SignUpPresenter.cs" />
+    <Compile Include="Presenters\TeamChoosePresenter.cs" />
+    <Compile Include="Presenters\TeamPresenter.cs" />
+    <Compile Include="Presenters\TechnichsChoosePresenter.cs" />
+    <Compile Include="Presenters\TechnicsPresenter.cs" />
+    <Compile Include="Presenters\WorkersChoosePresenter.cs" />
+    <Compile Include="Presenters\WorkersPresenter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{476efb35-84e9-42d1-923f-2d99db6d03d8}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UI\UI.csproj">
+      <Project>{7f8ceba9-9dc1-46d0-ba94-cd458c024e33}</Project>
+      <Name>UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
