@@ -33,20 +33,19 @@ namespace aircraft_client.Logic.Presenters
         {
             string item = View.GetChoosenItem();
             string query;
-            if (typeof(TPresenter) == typeof(DirectorWorkshopPresenter))
-                query = Query.GetWorkshopProductsByWorkshop(item);
-            else if (typeof(TPresenter) == typeof(DirectorSectorPresenter))
-                query = Query.GetSectorJobsBySector(item);
-            else if (typeof(TPresenter) == typeof(ScientistPresenter))
-                query = Query.GetExperimentsByScientist(item);
+            if (typeof(TPresenter) == typeof(DirectorScientistsPresenter))
+            {
+                if(item.Split(' ').Length==3)
+                    query = Query.GetExperimentsByScientist(item);
+                else
+                    query = Query.GetLabsListByProduct(item.Split(' ')[0]);
+            }
             else if (typeof(TPresenter) == typeof(EquipmentManagerPresenter))
                 query = Query.GetToolsByLaboratory(item);
             else if (typeof(TPresenter) == typeof(JobsPresenter))
                 query = Query.GetJobsByProductName(item.Split(' ')[0]);
             else if (typeof(TPresenter) == typeof(ProductionPresenter))
                 query = Query.GetTeamsAssembling(item.Split(' ')[0]);
-            else if (typeof(TPresenter) == typeof(DirectorScientistsPresenter))
-                query = Query.GetLabsListByProduct(item.Split(' ')[0]);
             else
                 throw new NotImplementedException("Невозможно определить представителя");
             Controller.Run<TPresenter, string>(query);

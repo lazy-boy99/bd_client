@@ -64,9 +64,7 @@
     <Compile Include="Presenters\ChooseScientistPresenter.cs" />
     <Compile Include="Presenters\DirectorProductionPresenter.cs" />
     <Compile Include="Presenters\DirectorScientistsPresenter.cs" />
-    <Compile Include="Presenters\DirectorSectorPresenter.cs" />
     <Compile Include="Presenters\DirectorWorkersPresenter.cs" />
-    <Compile Include="Presenters\DirectorWorkshopPresenter.cs" />
     <Compile Include="Presenters\EquipmentManagerPresenter.cs" />
     <Compile Include="Presenters\DirectorTechnicsPresenter.cs" />
     <Compile Include="Presenters\DirectorPresenter.cs" />
@@ -77,11 +75,9 @@
     <Compile Include="Presenters\MastersChoosePresenter.cs" />
     <Compile Include="Presenters\ProductionChoosePresenter.cs" />
     <Compile Include="Presenters\ProductionPresenter.cs" />
-    <Compile Include="Presenters\ScientistPresenter.cs" />
     <Compile Include="Presenters\BasePresenter.cs" />
     <Compile Include="Presenters\IPresenter.cs" />
     <Compile Include="Presenters\SectorChoosePresenter.cs" />
-    <Compile Include="Presenters\SignUpPresenter.cs" />
     <Compile Include="Presenters\TeamChoosePresenter.cs" />
     <Compile Include="Presenters\TeamPresenter.cs" />
     <Compile Include="Presenters\TechnichsChoosePresenter.cs" />

@@ -113,12 +113,6 @@
     <Compile Include="DirectorScientistsForm.Designer.cs">
       <DependentUpon>DirectorScientistsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DirectorSectorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DirectorSectorForm.Designer.cs">
-      <DependentUpon>DirectorSectorForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="DirectorTechnicsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,12 +124,6 @@
     </Compile>
     <Compile Include="DirectorWorkersForm.Designer.cs">
       <DependentUpon>DirectorWorkersForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DirectorWorkshopForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DirectorWorkshopForm.Designer.cs">
-      <DependentUpon>DirectorWorkshopForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EquipmentManagerForm.cs">
       <SubType>Form</SubType>
@@ -179,23 +167,11 @@
     <Compile Include="ScientistChooseForm.Designer.cs">
       <DependentUpon>ScientistChooseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScientistForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ScientistForm.Designer.cs">
-      <DependentUpon>ScientistForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="SectorChooseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SectorChooseForm.Designer.cs">
       <DependentUpon>SectorChooseForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SignUpForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SignUpForm.Designer.cs">
-      <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TeamChooseForm.cs">
       <SubType>Form</SubType>
@@ -285,9 +261,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SectorChooseForm.resx">
       <DependentUpon>SectorChooseForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SignUpForm.resx">
-      <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeamChooseForm.resx">
       <DependentUpon>TeamChooseForm.cs</DependentUpon>

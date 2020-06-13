@@ -67,11 +67,9 @@
     <Compile Include="Interfaces\IChooseView.cs" />
     <Compile Include="Interfaces\IDirectorProductionView.cs" />
     <Compile Include="Interfaces\IDirectorScientistsView.cs" />
-    <Compile Include="Interfaces\IDirectorSectorView.cs" />
     <Compile Include="Interfaces\IDirectorTechnicsView.cs" />
     <Compile Include="Interfaces\IDirectorView.cs" />
     <Compile Include="Interfaces\IDirectorWorkersView.cs" />
-    <Compile Include="Interfaces\IDirectorWorkshopView.cs" />
     <Compile Include="Interfaces\IEquipmentManagerView.cs" />
     <Compile Include="Interfaces\IJobsView.cs" />
     <Compile Include="Interfaces\ILeadWsView.cs" />
@@ -80,9 +78,7 @@
     <Compile Include="Interfaces\IProductionChooseView.cs" />
     <Compile Include="Interfaces\IProductionView.cs" />
     <Compile Include="Interfaces\IScientistChooseView.cs" />
-    <Compile Include="Interfaces\IScientistView.cs" />
     <Compile Include="Interfaces\ISectorChooseView.cs" />
-    <Compile Include="Interfaces\ISignUpView.cs" />
     <Compile Include="Interfaces\ITeamView.cs" />
     <Compile Include="Interfaces\ITechnicsView.cs" />
     <Compile Include="Interfaces\IView.cs" />

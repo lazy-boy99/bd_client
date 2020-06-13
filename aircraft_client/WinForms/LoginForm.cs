@@ -18,7 +18,6 @@ namespace aircraft_client.WinForms
             InitializeComponent();
             StartButton.Click+=(sender, e) => Invoke(Login);
             ExitButton.Click += (sender, e) => Invoke(Exit);
-            SignUpButton.Click += (sender, e) => Invoke(SignUp);
         }
 
         public LoginForm()
@@ -36,6 +35,5 @@ namespace aircraft_client.WinForms
 
         public event Action Login;
         public event Action Exit;
-        public event Action SignUp;
     }
 }

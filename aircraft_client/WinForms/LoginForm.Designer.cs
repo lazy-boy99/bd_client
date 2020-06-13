@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
             this.StartButton = new System.Windows.Forms.Button();
-            this.SignUpButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LogField
@@ -74,9 +73,9 @@
             // 
             // ExitButton
             // 
-            this.ExitButton.Location = new System.Drawing.Point(257, 108);
+            this.ExitButton.Location = new System.Drawing.Point(189, 108);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(72, 23);
+            this.ExitButton.Size = new System.Drawing.Size(140, 23);
             this.ExitButton.TabIndex = 5;
             this.ExitButton.Text = "Выход";
             this.ExitButton.UseVisualStyleBackColor = true;
@@ -85,26 +84,16 @@
             // 
             this.StartButton.Location = new System.Drawing.Point(12, 108);
             this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(106, 23);
+            this.StartButton.Size = new System.Drawing.Size(171, 23);
             this.StartButton.TabIndex = 6;
             this.StartButton.Text = "Войти";
             this.StartButton.UseVisualStyleBackColor = true;
-            // 
-            // SignUpButton
-            // 
-            this.SignUpButton.Location = new System.Drawing.Point(124, 108);
-            this.SignUpButton.Name = "SignUpButton";
-            this.SignUpButton.Size = new System.Drawing.Size(127, 23);
-            this.SignUpButton.TabIndex = 7;
-            this.SignUpButton.Text = "Зарегистрироваться";
-            this.SignUpButton.UseVisualStyleBackColor = true;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(341, 144);
-            this.Controls.Add(this.SignUpButton);
             this.Controls.Add(this.StartButton);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.label2);
@@ -126,6 +115,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button StartButton;
-        private System.Windows.Forms.Button SignUpButton;
     }
 }

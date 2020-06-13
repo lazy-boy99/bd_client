@@ -1,6 +1,7 @@
 ﻿using aircraft_client.Logic.ApplicationController;
 using aircraft_client.Model;
 using aircraft_client.Model.Data;
+using aircraft_client.Model.Formatter;
 using aircraft_client.UI.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace aircraft_client.Logic.Presenters
             View.LabsList += GetLabsByProduct;
             View.ProdsByLab += GetProductsByLab;
             View.ScientistListByProd += GetScientists;
+            View.ProdByScientist += GetProductsByScientist;
         }
 
         private void GetLabsByProduct()
@@ -38,6 +40,18 @@ namespace aircraft_client.Logic.Presenters
         {
             Controller.Run<ChooseScientistPresenter
                 , string>(Query.GetProductsNames());
+        }
+
+        private void GetProductsByScientist()
+        {
+            var query = QueryFormatter.SelectFormatter
+                           .Get(new List<string> { "first_name"
+                                , "last_name"
+                                , "patronymic" }
+                               , "investigators");
+            Controller.Run
+                <ChoosePresenter<DirectorScientistsPresenter, IDirectorScientistsView>
+                , string, string>(query, "Выберите научного сотрудника");
         }
 
     }
