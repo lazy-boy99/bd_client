@@ -17,11 +17,8 @@ namespace aircraft_client.Model
             DirectorProduction,
             DirectorTechnics,
             DirectorScientists,
-            Scientist,
             Director,
-            EquipmentManager,
-            DirectorWorkshop,
-            DirectorSector
+            EquipmentManager
         }
 
         public static string ToString(RoleType type) =>
@@ -30,11 +27,8 @@ namespace aircraft_client.Model
                 RoleType.Director => "Директор",
                 RoleType.DirectorProduction => "Директор по производству",
                 RoleType.DirectorScientists => "Директор научного персонала",
-                RoleType.DirectorSector => "Начальник участка",
                 RoleType.DirectorTechnics => "Директор технического персонала",
                 RoleType.DirectorWorkers => "Директор рабочего персонала",
-                RoleType.DirectorWorkshop => "Начальник цеха",
-                RoleType.Scientist => "Научный сотрудник",
                 RoleType.EquipmentManager => "Ответственный за лабораторное оборудование",
                 _ => throw new NotImplementedException("name of type is null!!")
             };
@@ -46,11 +40,8 @@ namespace aircraft_client.Model
                 "Директор" => RoleType.Director,
                 "Директор по производству" => RoleType.DirectorProduction,
                 "Директор научного персонала" => RoleType.DirectorScientists,
-                "Начальник участка" => RoleType.DirectorSector,
                 "Директор технического персонала" => RoleType.DirectorTechnics,
                 "Директор рабочего персонала" => RoleType.DirectorWorkers,
-                "Начальник цеха" => RoleType.DirectorWorkshop,
-                "Научный сотрудник" => RoleType.Scientist,
                 "Ответственный за лабораторное оборудование" => RoleType.EquipmentManager,
                 _ => throw new NotImplementedException("name of type is null!!")
             };

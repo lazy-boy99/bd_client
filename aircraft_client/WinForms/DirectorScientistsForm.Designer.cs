@@ -31,6 +31,7 @@
             this.LabsButton = new System.Windows.Forms.Button();
             this.ProdByLabButton = new System.Windows.Forms.Button();
             this.ScientistButton = new System.Windows.Forms.Button();
+            this.ProdByScientistButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabsButton
@@ -46,25 +47,35 @@
             // 
             this.ProdByLabButton.Location = new System.Drawing.Point(604, 117);
             this.ProdByLabButton.Name = "ProdByLabButton";
-            this.ProdByLabButton.Size = new System.Drawing.Size(184, 120);
+            this.ProdByLabButton.Size = new System.Drawing.Size(184, 77);
             this.ProdByLabButton.TabIndex = 3;
             this.ProdByLabButton.Text = "Изделия испытуемые в лаборатории";
             this.ProdByLabButton.UseVisualStyleBackColor = true;
             // 
             // ScientistButton
             // 
-            this.ScientistButton.Location = new System.Drawing.Point(604, 244);
+            this.ScientistButton.Location = new System.Drawing.Point(604, 200);
             this.ScientistButton.Name = "ScientistButton";
-            this.ScientistButton.Size = new System.Drawing.Size(184, 114);
+            this.ScientistButton.Size = new System.Drawing.Size(184, 79);
             this.ScientistButton.TabIndex = 4;
             this.ScientistButton.Text = "Испытатели,участвующие в сборке изделия";
             this.ScientistButton.UseVisualStyleBackColor = true;
+            // 
+            // ProdByScientistButton
+            // 
+            this.ProdByScientistButton.Location = new System.Drawing.Point(604, 286);
+            this.ProdByScientistButton.Name = "ProdByScientistButton";
+            this.ProdByScientistButton.Size = new System.Drawing.Size(184, 72);
+            this.ProdByScientistButton.TabIndex = 5;
+            this.ProdByScientistButton.Text = "Получить изделия, в испытаниях которого участвует научный сотрудник";
+            this.ProdByScientistButton.UseVisualStyleBackColor = true;
             // 
             // DirectorScientistsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ProdByScientistButton);
             this.Controls.Add(this.ScientistButton);
             this.Controls.Add(this.ProdByLabButton);
             this.Controls.Add(this.LabsButton);
@@ -74,6 +85,7 @@
             this.Controls.SetChildIndex(this.LabsButton, 0);
             this.Controls.SetChildIndex(this.ProdByLabButton, 0);
             this.Controls.SetChildIndex(this.ScientistButton, 0);
+            this.Controls.SetChildIndex(this.ProdByScientistButton, 0);
             this.ResumeLayout(false);
 
         }
@@ -83,5 +95,6 @@
         private System.Windows.Forms.Button LabsButton;
         private System.Windows.Forms.Button ProdByLabButton;
         private System.Windows.Forms.Button ScientistButton;
+        private System.Windows.Forms.Button ProdByScientistButton;
     }
 }

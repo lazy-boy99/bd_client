@@ -8,6 +8,5 @@ namespace aircraft_client.UI.Interfaces
         string Password { get; }
         event Action Login;
         event Action Exit;
-        event Action SignUp;
     }
 }

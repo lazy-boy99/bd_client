@@ -22,7 +22,6 @@ namespace aircraft_client.Logic.Presenters
             Model = model;
             View.Login += Enter;
             View.Exit += Application.Exit;
-            View.SignUp += Controller.Run<SignUpPresenter>;
         }
 
         private RoleManager.RoleType GetInformation()
@@ -54,33 +53,9 @@ namespace aircraft_client.Logic.Presenters
         {
                 switch (type)
                 {
-                    case RoleManager.RoleType.DirectorWorkshop:
-                        var query = QueryFormatter.SelectFormatter.Get("name", "workshops");
-                        Controller.Run
-                            <ChoosePresenter<DirectorWorkshopPresenter, IDirectorWorkshopView>
-                            , string, string>(query, "Выберите название цеха");
-                        break;
-
-                    case RoleManager.RoleType.DirectorSector:
-                        query = QueryFormatter.SelectFormatter.Get("name", "sectors");
-                        Controller.Run
-                            <ChoosePresenter<DirectorSectorPresenter, IDirectorSectorView>
-                            , string, string>(query, "Выберите название участка");
-                        break;
-
-                    case RoleManager.RoleType.Scientist:
-                        query = QueryFormatter.SelectFormatter
-                            .Get(new List<string> { "first_name"
-                                , "last_name"
-                                , "patronymic" }
-                                , "investigators");
-                        Controller.Run
-                            <ChoosePresenter<ScientistPresenter, IScientistView>
-                            , string, string>(query, "Выберите научного сотрудника");
-                        break;
-
+                    
                     case RoleManager.RoleType.EquipmentManager:
-                        query = QueryFormatter.SelectFormatter
+                        var query = QueryFormatter.SelectFormatter
                             .Get("name", "laboratories");
                         Controller.Run
                             <ChoosePresenter<EquipmentManagerPresenter, IEquipmentManagerView>

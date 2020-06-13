@@ -12,79 +12,8 @@ namespace aircraft_client.Model
 {
     public static class  Query
     {
-        public static string GetWorkshopProductsByWorkshop(string workshopName)
-        {
-            var unionQuery = QueryFormatter.SelectFormatter
-                   .Union(new List<string> { "name", "prod_id" }
-                   , new List<string> { "rockets", "gliders", "hang_gliders", "helicopters", "planes", "other_prods" });
+        
 
-            var productsQuery = QueryFormatter.SelectFormatter
-                .Get(new List<string> { "id", "workshop_id" }
-                    , "products");
-
-            var queryWs = QueryFormatter.SelectFormatter
-                .Get(new List<string> { "id", "name" }
-                    , "workshops", "name='" + workshopName + "'");
-
-            var joinQuery= QueryFormatter.Join(productsQuery
-                , queryWs
-                , new List<string> { "workshop_id=id" }
-                , "t1"
-                , "t2");
-
-            joinQuery = QueryFormatter.SelectFormatter.Get(new List<string> { "t1.id"
-                    ,"name"}, joinQuery);
-
-            joinQuery = QueryFormatter.Join(unionQuery
-                , joinQuery
-                , new List<string> { "prod_id=id" }
-                , "t3"
-                , "t4");
-
-            return QueryFormatter.SelectFormatter
-                .Get(new List<string> { "t3.name", "t4.name","type" }, joinQuery);
-        }
-
-        public static string GetSectorJobsBySector(string sectorName)
-        {
-            var unionQuery = QueryFormatter.SelectFormatter
-                    .Union(new List<string> { "name", "prod_id" }
-                    , new List<string> { "rockets", "gliders", "hang_gliders", "helicopters", "planes", "other_prods" });
-
-            var productJobsQuery = QueryFormatter.SelectFormatter
-                .Get(new List<string> { "job_id", "prod_id", "time_begin", "time_end" }
-                , "products_jobs");
-
-            var sectorsSubQuery = QueryFormatter.SelectFormatter
-                .Get("id"
-                , "sectors"
-                , "name='" + sectorName+"'");
-
-            var queryJobs = QueryFormatter.SelectFormatter
-                .Get(new List<string> { "name", "id" }
-                , "jobs", sectorsSubQuery, "sec_id");
-
-            var queryJoin = QueryFormatter.Join(productJobsQuery
-                , queryJobs
-                , new List<string> { "job_id =id" }
-                , "t1"
-                , "t2");
-
-            queryJoin = QueryFormatter.SelectFormatter.Get("*", queryJoin);
-
-            queryJoin = QueryFormatter.Join(queryJoin
-                , unionQuery
-                , new List<string> { "prod_id=prod_id" }
-                , "t3"
-                , "t4");
-
-            return QueryFormatter.SelectFormatter
-                .Get(new List<string> { "t3.name as name_job"
-                , "t4.name as name_product"
-                ," time_begin"
-                ," time_end "}
-                , queryJoin);
-        }
 
         public static string GetExperimentsByScientist(string nameScientist)
         {
