@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration.cs" />
+    <Compile Include="Connection.cs" />
     <Compile Include="Data\BaseModel.cs" />
     <Compile Include="Data\IModel.cs" />
     <Compile Include="Formatter\Formatter.cs" />
@@ -80,6 +81,5 @@
     </Reference>
     <Reference Include="System.Xml" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
