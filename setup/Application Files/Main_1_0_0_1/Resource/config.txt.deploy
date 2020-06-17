@@ -1,5 +1,0 @@
-﻿host=localhost
-port=1521
-service name=aircraft
-user=db
-password=123
