@@ -1,14 +1,16 @@
 # Aircraft client
 Приложение написано на языке C#;\
 Необходимые программы: \
-Windows OS, .net framework 4.8.0, Oracle database\
+Windows OS, .net framework 4.8.0, Oracle database, sqldeveloper(опционально)\
 Установка: \
 0.Для того чтобы выполнить инсталляцию приложение выполните команду git clone. \
 1.Для корректной работы с базой данных создайте/ зайдите в oracle database, создайте новую схему и выполните в строгом порядке следующие скрипты из папки \
 src:scripts.sql,autoincrement_triggers.sql,triggers.sql,export.sql\
 Альтернативные способы:
-зайдите в sqldeveloper на панели интерфейса выберите file->data modeler-> import->dll и выберите export1.sql файл\
-2. Перейдете в папку setup\Application Files\Main_1_0_0_1\Resource выберите файл config.txt.deploy и откройте его в текстовом редакторе. \
+  # если имя пользователя специфичное относительно стандартного(db), прийдется изменить все вхождения "db" в скрипте sql/export1.sql на корректное имя  
+  1.Зайдите в sqldeveloper на панели интерфейса выберите file->data modeler-> import->dll и выберите src/export1.sql файл\
+  2.Зайдите в СУБД посредством sqlplus, выполните команды перечисленые в src/export1.sql
+2. Перейдете в папку setup\Application Files\Main_1_0_0_1\Resource выберите файл config.txt и откройте его в текстовом редакторе. \
 Впишите туда корректные данные вашей базы данных в соответствие Key=Value. \
 3.Зайдите в папку setup и нажмите на скрипт setup.exe, таким образом будет выполнена установка програмы, для запуска также нажимайте на setup.exe\
 \
