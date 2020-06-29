@@ -1,5 +1,5 @@
 --------------------------------------------------------
---  File created - среда-июня-17-2020   
+--  File created - вторник-июня-30-2020   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Sequence SEQ_ACCOUNTS
@@ -95,12 +95,12 @@
 --  DDL for Sequence SEQ_PRODUCTS_EXPS
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "DB"."SEQ_PRODUCTS_EXPS"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 21 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+   CREATE SEQUENCE  "DB"."SEQ_PRODUCTS_EXPS"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 41 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
 --------------------------------------------------------
 --  DDL for Sequence SEQ_PRODUCTS_JOBS
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "DB"."SEQ_PRODUCTS_JOBS"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 41 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+   CREATE SEQUENCE  "DB"."SEQ_PRODUCTS_JOBS"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 61 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
 --------------------------------------------------------
 --  DDL for Sequence SEQ_ROCKETS
 --------------------------------------------------------
@@ -745,23 +745,37 @@ Insert into DB.PLANES (ID,COUNT_ENGINES,NAME,PROD_ID) values ('2','4','Ил-62','4
 commit;
 REM INSERTING into DB.PRODUCTS
 SET DEFINE OFF;
-Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('41','1');
-Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('42','4');
-Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('43','4');
-Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('44','1');
-Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('45','1');
-Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('46','1');
-Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('47','4');
-Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('48','1');
-Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('49','1');
-Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('50','1');
-Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('51','1');
+Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('41','21');
+Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('42','24');
+Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('43','24');
+Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('44','21');
+Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('45','21');
+Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('46','21');
+Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('47','24');
+Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('48','21');
+Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('49','21');
+Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('50','21');
+Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('51','21');
 Insert into DB.PRODUCTS (ID,WORKSHOP_ID) values ('52',null);
 commit;
 REM INSERTING into DB.PRODUCTS_EXPS
 SET DEFINE OFF;
+Insert into DB.PRODUCTS_EXPS (ID,EXP_ID,ORDER_NUM,PROD_ID,TIME_BEGIN,TIME_END) values ('21','25','1','41',to_date('10.06.20','DD.MM.RR'),to_date('17.06.20','DD.MM.RR'));
+Insert into DB.PRODUCTS_EXPS (ID,EXP_ID,ORDER_NUM,PROD_ID,TIME_BEGIN,TIME_END) values ('22','25','1','46',to_date('18.06.20','DD.MM.RR'),null);
+Insert into DB.PRODUCTS_EXPS (ID,EXP_ID,ORDER_NUM,PROD_ID,TIME_BEGIN,TIME_END) values ('24','21','2','41',to_date('18.06.20','DD.MM.RR'),to_date('24.06.20','DD.MM.RR'));
+Insert into DB.PRODUCTS_EXPS (ID,EXP_ID,ORDER_NUM,PROD_ID,TIME_BEGIN,TIME_END) values ('25','24','3','41',to_date('25.06.20','DD.MM.RR'),null);
+Insert into DB.PRODUCTS_EXPS (ID,EXP_ID,ORDER_NUM,PROD_ID,TIME_BEGIN,TIME_END) values ('27','23','1','42',to_date('02.06.20','DD.MM.RR'),null);
+Insert into DB.PRODUCTS_EXPS (ID,EXP_ID,ORDER_NUM,PROD_ID,TIME_BEGIN,TIME_END) values ('28','25','1','45',to_date('01.05.20','DD.MM.RR'),null);
+commit;
 REM INSERTING into DB.PRODUCTS_JOBS
 SET DEFINE OFF;
+Insert into DB.PRODUCTS_JOBS (ID,JOB_ID,ORDER_NUM,PROD_ID,TIME_BEGIN,TIME_END,TEAM_ID) values ('45','45','1','42',to_date('09.06.20','DD.MM.RR'),to_date('11.06.20','DD.MM.RR'),'36');
+Insert into DB.PRODUCTS_JOBS (ID,JOB_ID,ORDER_NUM,PROD_ID,TIME_BEGIN,TIME_END,TEAM_ID) values ('46','44','2','42',to_date('12.06.20','DD.MM.RR'),to_date('19.06.20','DD.MM.RR'),'35');
+Insert into DB.PRODUCTS_JOBS (ID,JOB_ID,ORDER_NUM,PROD_ID,TIME_BEGIN,TIME_END,TEAM_ID) values ('47','47','3','42',to_date('20.06.20','DD.MM.RR'),null,'37');
+Insert into DB.PRODUCTS_JOBS (ID,JOB_ID,ORDER_NUM,PROD_ID,TIME_BEGIN,TIME_END,TEAM_ID) values ('48','46','1','44',to_date('10.06.20','DD.MM.RR'),to_date('13.06.20','DD.MM.RR'),'38');
+Insert into DB.PRODUCTS_JOBS (ID,JOB_ID,ORDER_NUM,PROD_ID,TIME_BEGIN,TIME_END,TEAM_ID) values ('49','46','1','46',to_date('17.06.20','DD.MM.RR'),null,'38');
+Insert into DB.PRODUCTS_JOBS (ID,JOB_ID,ORDER_NUM,PROD_ID,TIME_BEGIN,TIME_END,TEAM_ID) values ('50','47','1','47',to_date('18.06.20','DD.MM.RR'),to_date('19.06.20','DD.MM.RR'),'35');
+commit;
 REM INSERTING into DB.ROCKETS
 SET DEFINE OFF;
 Insert into DB.ROCKETS (ID,POWER,NAME,PROD_ID) values ('21','1','Союз-2','41');
@@ -840,96 +854,6 @@ Insert into DB.WORKSHOPS (ID,NAME,TECH_ID) values ('21','сборочный
 Insert into DB.WORKSHOPS (ID,NAME,TECH_ID) values ('24','токарной обработки','4');
 commit;
 --------------------------------------------------------
---  DDL for Index SYS_C008772
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "DB"."SYS_C008772" ON "DB"."PRODUCTS_JOBS" ("ID", "JOB_ID", "ORDER_NUM", "PROD_ID", "TIME_BEGIN", "TIME_END", "TEAM_ID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index SYS_C008805
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "DB"."SYS_C008805" ON "DB"."PRODUCTS_EXPS" ("ID", "EXP_ID", "ORDER_NUM", "PROD_ID", "TIME_BEGIN", "TIME_END") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index UNIQUE_ACC
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "DB"."UNIQUE_ACC" ON "DB"."ACCOUNTS" ("LOGIN", "PAS") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index UNIQUE_EXP_TOOL
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "DB"."UNIQUE_EXP_TOOL" ON "DB"."EXP_TOOLS" ("EXP_ID", "TOOL_ID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index UNIQUE_LAB_WS
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "DB"."UNIQUE_LAB_WS" ON "DB"."LAB_SUP_WS" ("LAB_ID", "WS_ID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index UNIQUE_LEAD
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "DB"."UNIQUE_LEAD" ON "DB"."TEAMS" ("LEAD_ID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index UNIQUE_NAME_TEAM
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "DB"."UNIQUE_NAME_TEAM" ON "DB"."TEAMS" ("NAME") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index UNIQUE_ORDER_EXP
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "DB"."UNIQUE_ORDER_EXP" ON "DB"."PRODUCTS_EXPS" ("PROD_ID", "ORDER_NUM") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index UNIQUE_ORDER_JOB
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "DB"."UNIQUE_ORDER_JOB" ON "DB"."PRODUCTS_JOBS" ("PROD_ID", "ORDER_NUM") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
 --  DDL for Index UNIQUE_PROD_EXP
 --------------------------------------------------------
 
@@ -940,30 +864,10 @@ commit;
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
 --------------------------------------------------------
---  DDL for Index UNIQUE_PROD_JOB
+--  DDL for Index UNIQ_TECH_ID_TECHNOLOGISTS
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "DB"."UNIQUE_PROD_JOB" ON "DB"."PRODUCTS_JOBS" ("PROD_ID", "JOB_ID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index UNIQUE_SEC_NAME
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "DB"."UNIQUE_SEC_NAME" ON "DB"."SECTORS" ("NAME") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index UNIQUE_WS_NAME
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "DB"."UNIQUE_WS_NAME" ON "DB"."WORKSHOPS" ("NAME") 
+  CREATE UNIQUE INDEX "DB"."UNIQ_TECH_ID_TECHNOLOGISTS" ON "DB"."TECHNOLOGISTS" ("TECH_ID") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
@@ -974,16 +878,6 @@ commit;
 --------------------------------------------------------
 
   CREATE UNIQUE INDEX "DB"."UNIQ_EXP_NAME" ON "DB"."EXPERIMENTS" ("NAME") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index UNIQ_JOB_NAME
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "DB"."UNIQ_JOB_NAME" ON "DB"."JOBS" ("NAME") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
@@ -1010,20 +904,30 @@ commit;
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
 --------------------------------------------------------
---  DDL for Index UNIQ_NAME_HELI
+--  DDL for Index UNIQ_NAME_PLANE
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "DB"."UNIQ_NAME_HELI" ON "DB"."HELICOPTERS" ("NAME") 
+  CREATE UNIQUE INDEX "DB"."UNIQ_NAME_PLANE" ON "DB"."PLANES" ("NAME") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
 --------------------------------------------------------
---  DDL for Index UNIQ_NAME_HG
+--  DDL for Index SYS_C008772
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "DB"."UNIQ_NAME_HG" ON "DB"."HANG_GLIDERS" ("NAME") 
+  CREATE UNIQUE INDEX "DB"."SYS_C008772" ON "DB"."PRODUCTS_JOBS" ("ID", "JOB_ID", "ORDER_NUM", "PROD_ID", "TIME_BEGIN", "TIME_END", "TEAM_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIQUE_EXP_TOOL
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQUE_EXP_TOOL" ON "DB"."EXP_TOOLS" ("EXP_ID", "TOOL_ID") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
@@ -1040,6 +944,36 @@ commit;
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
 --------------------------------------------------------
+--  DDL for Index SYS_C8805
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."SYS_C8805" ON "DB"."PRODUCTS_EXPS" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIQ_WORK_ID_FITT
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQ_WORK_ID_FITT" ON "DB"."FITTERS" ("WORK_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIQ_WORK_ID_WELD
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQ_WORK_ID_WELD" ON "DB"."WELDERS" ("WORK_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
 --  DDL for Index UNIQ_NAME_OTHER_PROD
 --------------------------------------------------------
 
@@ -1050,30 +984,20 @@ commit;
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
 --------------------------------------------------------
---  DDL for Index UNIQ_NAME_PLANE
+--  DDL for Index UNIQUE_NAME_TEAM
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "DB"."UNIQ_NAME_PLANE" ON "DB"."PLANES" ("NAME") 
+  CREATE UNIQUE INDEX "DB"."UNIQUE_NAME_TEAM" ON "DB"."TEAMS" ("NAME") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
 --------------------------------------------------------
---  DDL for Index UNIQ_NAME_ROCKET
+--  DDL for Index UNIQUE_ORDER_EXP
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "DB"."UNIQ_NAME_ROCKET" ON "DB"."ROCKETS" ("NAME") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index UNIQ_NAME_TECHS
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "DB"."UNIQ_NAME_TECHS" ON "DB"."TECHNICS" ("FIRST_NAME", "LAST_NAME", "PATRONYMIC") 
+  CREATE UNIQUE INDEX "DB"."UNIQUE_ORDER_EXP" ON "DB"."PRODUCTS_EXPS" ("PROD_ID", "ORDER_NUM") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
@@ -1090,10 +1014,60 @@ commit;
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
 --------------------------------------------------------
---  DDL for Index UNIQ_TECH_ID_ENG
+--  DDL for Index UNIQUE_LEAD
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "DB"."UNIQ_TECH_ID_ENG" ON "DB"."ENGINEERS" ("TECH_ID") 
+  CREATE UNIQUE INDEX "DB"."UNIQUE_LEAD" ON "DB"."TEAMS" ("LEAD_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIQUE_SEC_NAME
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQUE_SEC_NAME" ON "DB"."SECTORS" ("NAME") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIQUE_PROD_JOB
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQUE_PROD_JOB" ON "DB"."PRODUCTS_JOBS" ("PROD_ID", "JOB_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIQUE_ACC
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQUE_ACC" ON "DB"."ACCOUNTS" ("LOGIN", "PAS") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIQ_NAME_HG
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQ_NAME_HG" ON "DB"."HANG_GLIDERS" ("NAME") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIQ_NAME_HELI
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQ_NAME_HELI" ON "DB"."HELICOPTERS" ("NAME") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
@@ -1120,60 +1094,10 @@ commit;
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
 --------------------------------------------------------
---  DDL for Index UNIQ_TECH_ID_TECH
+--  DDL for Index SYS_C008805
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "DB"."UNIQ_TECH_ID_TECH" ON "DB"."TECHNICIANS" ("TECH_ID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index UNIQ_TECH_ID_TECHNOLOGISTS
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "DB"."UNIQ_TECH_ID_TECHNOLOGISTS" ON "DB"."TECHNOLOGISTS" ("TECH_ID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index UNIQ_TECH_ID_WS
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "DB"."UNIQ_TECH_ID_WS" ON "DB"."WORKSHOPS" ("TECH_ID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index UNIQ_TOOL_NAME
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "DB"."UNIQ_TOOL_NAME" ON "DB"."TOOLS" ("NAME") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index UNIQ_WORK_ID_COLL
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "DB"."UNIQ_WORK_ID_COLL" ON "DB"."COLLECTORS" ("WORK_ID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index UNIQ_WORK_ID_FITT
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "DB"."UNIQ_WORK_ID_FITT" ON "DB"."FITTERS" ("WORK_ID") 
+  CREATE UNIQUE INDEX "DB"."SYS_C008805" ON "DB"."PRODUCTS_EXPS" ("ID", "EXP_ID", "ORDER_NUM", "PROD_ID", "TIME_BEGIN", "TIME_END") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
@@ -1190,6 +1114,66 @@ commit;
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
 --------------------------------------------------------
+--  DDL for Index UNIQ_JOB_NAME
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQ_JOB_NAME" ON "DB"."JOBS" ("NAME") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIQ_TECH_ID_TECH
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQ_TECH_ID_TECH" ON "DB"."TECHNICIANS" ("TECH_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIQUE_ORDER_JOB
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQUE_ORDER_JOB" ON "DB"."PRODUCTS_JOBS" ("PROD_ID", "ORDER_NUM") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIQ_TECH_ID_WS
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQ_TECH_ID_WS" ON "DB"."WORKSHOPS" ("TECH_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIQ_WORK_ID_COLL
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQ_WORK_ID_COLL" ON "DB"."COLLECTORS" ("WORK_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIQUE_WS_NAME
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQUE_WS_NAME" ON "DB"."WORKSHOPS" ("NAME") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
 --  DDL for Index UNIQ_WORK_ID_TURN
 --------------------------------------------------------
 
@@ -1200,10 +1184,60 @@ commit;
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
 --------------------------------------------------------
---  DDL for Index UNIQ_WORK_ID_WELD
+--  DDL for Index SYS_C8772
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "DB"."UNIQ_WORK_ID_WELD" ON "DB"."WELDERS" ("WORK_ID") 
+  CREATE UNIQUE INDEX "DB"."SYS_C8772" ON "DB"."PRODUCTS_JOBS" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIQ_NAME_TECHS
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQ_NAME_TECHS" ON "DB"."TECHNICS" ("FIRST_NAME", "LAST_NAME", "PATRONYMIC") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIQ_NAME_ROCKET
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQ_NAME_ROCKET" ON "DB"."ROCKETS" ("NAME") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIQ_TOOL_NAME
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQ_TOOL_NAME" ON "DB"."TOOLS" ("NAME") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIQUE_LAB_WS
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQUE_LAB_WS" ON "DB"."LAB_SUP_WS" ("LAB_ID", "WS_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index UNIQ_TECH_ID_ENG
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DB"."UNIQ_TECH_ID_ENG" ON "DB"."ENGINEERS" ("TECH_ID") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
@@ -1225,6 +1259,7 @@ BEGIN
     update teams set lead_id=:new.id where id=:new.team_id;  
   end if;
 end;
+
 /
 ALTER TRIGGER "DB"."ADD_LEAD_ID" ENABLE;
 --------------------------------------------------------
@@ -1246,6 +1281,7 @@ BEGIN
   end if;
 end;
 
+
 /
 ALTER TRIGGER "DB"."ADD_TEAM_ID" ENABLE;
 --------------------------------------------------------
@@ -1266,6 +1302,7 @@ BEGIN
       raise_application_error(-20000,'please setup workshop for product before');
   	end if;
 end;
+
 /
 ALTER TRIGGER "DB"."CHECK_WS" ENABLE;
 --------------------------------------------------------
@@ -1308,6 +1345,7 @@ BEGIN
   :new.prod_id:=id;  
   end if;   
 end;
+
 
 /
 ALTER TRIGGER "DB"."INS_GLIDERS" ENABLE;
@@ -1352,6 +1390,7 @@ BEGIN
   end if;   
 end;
 
+
 /
 ALTER TRIGGER "DB"."INS_HANG_GLIDERS" ENABLE;
 --------------------------------------------------------
@@ -1394,6 +1433,7 @@ BEGIN
   :new.prod_id:=id;  
   end if;   
 end;
+
 
 /
 ALTER TRIGGER "DB"."INS_HELICOPTERS" ENABLE;
@@ -1438,6 +1478,7 @@ BEGIN
   end if;   
 end;
 
+
 /
 ALTER TRIGGER "DB"."INS_OTHER_PRODS" ENABLE;
 --------------------------------------------------------
@@ -1480,6 +1521,7 @@ BEGIN
   :new.prod_id:=id;  
   end if;   
 end;
+
 
 /
 ALTER TRIGGER "DB"."INS_PLANES" ENABLE;
@@ -1524,6 +1566,7 @@ BEGIN
   end if;   
 end;
 
+
 /
 ALTER TRIGGER "DB"."INS_ROCKETS" ENABLE;
 --------------------------------------------------------
@@ -1539,6 +1582,7 @@ BEGIN
   INTO   :new.id
   FROM   dual;
 end;
+
 
 /
 ALTER TRIGGER "DB"."NEXT_ACCOUNT" ENABLE;
@@ -1556,6 +1600,7 @@ BEGIN
   FROM   dual;
 end;
 
+
 /
 ALTER TRIGGER "DB"."NEXT_COLLECTORS" ENABLE;
 --------------------------------------------------------
@@ -1571,6 +1616,7 @@ BEGIN
   INTO   :new.id
   FROM   dual;
 end;
+
 
 /
 ALTER TRIGGER "DB"."NEXT_ENGINEERS" ENABLE;
@@ -1588,6 +1634,7 @@ BEGIN
   FROM   dual;
 end;
 
+
 /
 ALTER TRIGGER "DB"."NEXT_EXPERIMENTS" ENABLE;
 --------------------------------------------------------
@@ -1603,6 +1650,7 @@ BEGIN
   INTO   :new.id
   FROM   dual;
 end;
+
 
 /
 ALTER TRIGGER "DB"."NEXT_EXP_TOOLS" ENABLE;
@@ -1620,6 +1668,7 @@ BEGIN
   FROM   dual;
 end;
 
+
 /
 ALTER TRIGGER "DB"."NEXT_FITTERS" ENABLE;
 --------------------------------------------------------
@@ -1635,6 +1684,7 @@ BEGIN
   INTO   :new.id
   FROM   dual;
 end;
+
 
 /
 ALTER TRIGGER "DB"."NEXT_GLIDERS" ENABLE;
@@ -1652,6 +1702,7 @@ BEGIN
   FROM   dual;
 end;
 
+
 /
 ALTER TRIGGER "DB"."NEXT_HANG_GLIDERS" ENABLE;
 --------------------------------------------------------
@@ -1668,6 +1719,7 @@ BEGIN
   FROM   dual;
 end;
 
+
 /
 ALTER TRIGGER "DB"."NEXT_HELICOPTERS" ENABLE;
 --------------------------------------------------------
@@ -1683,6 +1735,7 @@ BEGIN
   INTO   :new.id
   FROM   dual;
 end;
+
 /
 ALTER TRIGGER "DB"."NEXT_INVESTIGATORS" ENABLE;
 --------------------------------------------------------
@@ -1698,6 +1751,7 @@ BEGIN
   INTO   :new.id
   FROM   dual;
 end;
+
 
 /
 ALTER TRIGGER "DB"."NEXT_JOBS" ENABLE;
@@ -1715,6 +1769,7 @@ BEGIN
   FROM   dual;
 end;
 
+
 /
 ALTER TRIGGER "DB"."NEXT_LABORATORIES" ENABLE;
 --------------------------------------------------------
@@ -1730,6 +1785,7 @@ BEGIN
   INTO   :new.id
   FROM   dual;
 end;
+
 
 /
 ALTER TRIGGER "DB"."NEXT_LAB_SUP_WS" ENABLE;
@@ -1747,6 +1803,7 @@ BEGIN
   FROM   dual;
 end;
 
+
 /
 ALTER TRIGGER "DB"."NEXT_MASTERS" ENABLE;
 --------------------------------------------------------
@@ -1763,6 +1820,7 @@ BEGIN
   FROM   dual;
 end;
 
+
 /
 ALTER TRIGGER "DB"."NEXT_OTHER_PRODS" ENABLE;
 --------------------------------------------------------
@@ -1778,6 +1836,7 @@ BEGIN
   INTO   :new.id
   FROM   dual;
 end;
+
 /
 ALTER TRIGGER "DB"."NEXT_OTHER_WORKERS" ENABLE;
 --------------------------------------------------------
@@ -1793,6 +1852,7 @@ BEGIN
   INTO   :new.id
   FROM   dual;
 end;
+
 
 /
 ALTER TRIGGER "DB"."NEXT_PLANES" ENABLE;
@@ -1810,6 +1870,7 @@ BEGIN
   FROM   dual;
 end;
 
+
 /
 ALTER TRIGGER "DB"."NEXT_PRODUCTS_EXPS" ENABLE;
 --------------------------------------------------------
@@ -1825,6 +1886,7 @@ BEGIN
   INTO   :new.id
   FROM   dual;
 end;
+
 
 /
 ALTER TRIGGER "DB"."NEXT_PRODUCTS_JOBS" ENABLE;
@@ -1842,6 +1904,7 @@ BEGIN
   FROM   dual;
 end;
 
+
 /
 ALTER TRIGGER "DB"."NEXT_ROCKETS" ENABLE;
 --------------------------------------------------------
@@ -1857,6 +1920,7 @@ BEGIN
   INTO   :new.id
   FROM   dual;
 end;
+
 
 /
 ALTER TRIGGER "DB"."NEXT_SECTORS" ENABLE;
@@ -1874,6 +1938,7 @@ BEGIN
   FROM   dual;
 end;
 
+
 /
 ALTER TRIGGER "DB"."NEXT_TEAMS" ENABLE;
 --------------------------------------------------------
@@ -1890,6 +1955,7 @@ BEGIN
   FROM   dual;
 end;
 
+
 /
 ALTER TRIGGER "DB"."NEXT_TECHNICIANS" ENABLE;
 --------------------------------------------------------
@@ -1905,6 +1971,7 @@ BEGIN
   INTO   :new.id
   FROM   dual;
 end;
+
 /
 ALTER TRIGGER "DB"."NEXT_TECHNICS" ENABLE;
 --------------------------------------------------------
@@ -1920,6 +1987,7 @@ BEGIN
   INTO   :new.id
   FROM   dual;
 end;
+
 
 /
 ALTER TRIGGER "DB"."NEXT_TECHNOLOGISTS" ENABLE;
@@ -1937,6 +2005,7 @@ BEGIN
   FROM   dual;
 end;
 
+
 /
 ALTER TRIGGER "DB"."NEXT_TOOLS" ENABLE;
 --------------------------------------------------------
@@ -1952,6 +2021,7 @@ BEGIN
   INTO   :new.id
   FROM   dual;
 end;
+
 
 /
 ALTER TRIGGER "DB"."NEXT_TURNERS" ENABLE;
@@ -1969,6 +2039,7 @@ BEGIN
   FROM   dual;
 end;
 
+
 /
 ALTER TRIGGER "DB"."NEXT_WELDERS" ENABLE;
 --------------------------------------------------------
@@ -1985,6 +2056,7 @@ BEGIN
   FROM   dual;
 end;
 
+
 /
 ALTER TRIGGER "DB"."NEXT_WORKERS" ENABLE;
 --------------------------------------------------------
@@ -2000,6 +2072,7 @@ BEGIN
   INTO   :new.id
   FROM   dual;
 end;
+
 
 /
 ALTER TRIGGER "DB"."NEXT_WORKSHOPS" ENABLE;
@@ -2035,6 +2108,7 @@ BEGIN
   end if;   
 end;
 
+
 /
 ALTER TRIGGER "DB"."UNIQUE_COL" ENABLE;
 --------------------------------------------------------
@@ -2060,6 +2134,7 @@ BEGIN
   end if;   
   end if;
 end;
+
 
 /
 ALTER TRIGGER "DB"."UNIQUE_ENGINEERS" ENABLE;
@@ -2095,6 +2170,7 @@ BEGIN
   end if;   
 end;
 
+
 /
 ALTER TRIGGER "DB"."UNIQUE_FITTERS" ENABLE;
 --------------------------------------------------------
@@ -2120,6 +2196,7 @@ BEGIN
   end if;   
   end if;
 end;
+
 
 /
 ALTER TRIGGER "DB"."UNIQUE_MASTERS" ENABLE;
@@ -2155,6 +2232,7 @@ BEGIN
   end if;   
 end;
 
+
 /
 ALTER TRIGGER "DB"."UNIQUE_OTHER_WORKERS" ENABLE;
 --------------------------------------------------------
@@ -2180,6 +2258,7 @@ BEGIN
   end if;   
   end if;
 end;
+
 
 /
 ALTER TRIGGER "DB"."UNIQUE_SECTORS_LEADS" ENABLE;
@@ -2207,6 +2286,7 @@ BEGIN
   end if;
 end;
 
+
 /
 ALTER TRIGGER "DB"."UNIQUE_TECHNICIANS" ENABLE;
 --------------------------------------------------------
@@ -2232,6 +2312,7 @@ BEGIN
   end if;   
   end if;
 end;
+
 
 /
 ALTER TRIGGER "DB"."UNIQUE_TECHNOLOGISTS" ENABLE;
@@ -2267,6 +2348,7 @@ BEGIN
   end if;   
 end;
 
+
 /
 ALTER TRIGGER "DB"."UNIQUE_TURNERS" ENABLE;
 --------------------------------------------------------
@@ -2301,6 +2383,7 @@ BEGIN
   end if;   
 end;
 
+
 /
 ALTER TRIGGER "DB"."UNIQUE_WELDERS" ENABLE;
 --------------------------------------------------------
@@ -2327,6 +2410,7 @@ BEGIN
   end if;
 end;
 
+
 /
 ALTER TRIGGER "DB"."UNIQUE_WORKSHOPS_LEAD" ENABLE;
 --------------------------------------------------------
@@ -2351,6 +2435,7 @@ BEGIN
   end if;
 end;
 
+
 /
 ALTER TRIGGER "DB"."UNIQUE_WS_PROD" ENABLE;
 --------------------------------------------------------
@@ -2372,6 +2457,7 @@ BEGIN
   end if;
 end;
 
+
 /
 ALTER TRIGGER "DB"."UPDATE_LEAD_ID" ENABLE;
 --------------------------------------------------------
@@ -2387,6 +2473,7 @@ BEGIN
     raise_application_error(-20000,'could not update prod_id'); 
   end if;   
 end;
+
 
 /
 ALTER TRIGGER "DB"."UPDATE_LS_GLIDERS" ENABLE;
@@ -2404,6 +2491,7 @@ BEGIN
   end if;   
 end;
 
+
 /
 ALTER TRIGGER "DB"."UPDATE_LS_HANG_GLIDERS" ENABLE;
 --------------------------------------------------------
@@ -2419,6 +2507,7 @@ BEGIN
     raise_application_error(-20000,'could not update prod_id'); 
   end if;   
 end;
+
 
 /
 ALTER TRIGGER "DB"."UPDATE_LS_HELICOPTERS" ENABLE;
@@ -2436,6 +2525,7 @@ BEGIN
   end if;   
 end;
 
+
 /
 ALTER TRIGGER "DB"."UPDATE_LS_OTHER_PRODS" ENABLE;
 --------------------------------------------------------
@@ -2452,6 +2542,7 @@ BEGIN
   end if;   
 end;
 
+
 /
 ALTER TRIGGER "DB"."UPDATE_LS_PLANES" ENABLE;
 --------------------------------------------------------
@@ -2467,6 +2558,7 @@ BEGIN
     raise_application_error(-20000,'could not update prod_id'); 
   end if;   
 end;
+
 
 /
 ALTER TRIGGER "DB"."UPDATE_LS_ROCKETS" ENABLE;
@@ -2494,6 +2586,7 @@ BEGIN
     end if;
   end if;
 end;
+
 
 /
 ALTER TRIGGER "DB"."UPDATE_TEAM_ID" ENABLE;
@@ -2524,27 +2617,102 @@ BEGIN
     end if; 
   end if;
 end;
+
 /
 ALTER TRIGGER "DB"."VER_LAB_SUP_WS" ENABLE;
 --------------------------------------------------------
---  Constraints for Table TECHNICIANS
+--  Constraints for Table WORKERS
 --------------------------------------------------------
 
-  ALTER TABLE "DB"."TECHNICIANS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."TECHNICIANS" MODIFY ("CATEGORY" NOT NULL ENABLE);
-  ALTER TABLE "DB"."TECHNICIANS" MODIFY ("TECH_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."TECHNICIANS" ADD PRIMARY KEY ("ID")
+  ALTER TABLE "DB"."WORKERS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."WORKERS" MODIFY ("FIRST_NAME" NOT NULL ENABLE);
+  ALTER TABLE "DB"."WORKERS" MODIFY ("LAST_NAME" NOT NULL ENABLE);
+  ALTER TABLE "DB"."WORKERS" MODIFY ("PATRONYMIC" NOT NULL ENABLE);
+  ALTER TABLE "DB"."WORKERS" ADD PRIMARY KEY ("ID")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."TECHNICIANS" ADD CONSTRAINT "UNIQ_TECH_ID_TECH" UNIQUE ("TECH_ID")
+  ALTER TABLE "DB"."WORKERS" ADD CONSTRAINT "UNIQ_NAME_WORK" UNIQUE ("FIRST_NAME", "LAST_NAME", "PATRONYMIC")
+  USING INDEX "DB"."UNIQ_NAME_WORK"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table EXP_TOOLS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."EXP_TOOLS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."EXP_TOOLS" MODIFY ("EXP_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."EXP_TOOLS" MODIFY ("TOOL_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."EXP_TOOLS" ADD PRIMARY KEY ("ID")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."EXP_TOOLS" ADD CONSTRAINT "UNIQUE_EXP_TOOL" UNIQUE ("EXP_ID", "TOOL_ID")
+  USING INDEX "DB"."UNIQUE_EXP_TOOL"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table INVESTIGATORS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."INVESTIGATORS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."INVESTIGATORS" MODIFY ("FIRST_NAME" NOT NULL ENABLE);
+  ALTER TABLE "DB"."INVESTIGATORS" MODIFY ("LAST_NAME" NOT NULL ENABLE);
+  ALTER TABLE "DB"."INVESTIGATORS" MODIFY ("PATRONYMIC" NOT NULL ENABLE);
+  ALTER TABLE "DB"."INVESTIGATORS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."INVESTIGATORS" ADD CONSTRAINT "UNIQ_NAME_INV" UNIQUE ("FIRST_NAME", "LAST_NAME", "PATRONYMIC")
+  USING INDEX "DB"."UNIQ_NAME_INV"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table FITTERS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."FITTERS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."FITTERS" MODIFY ("CATEGORY" NOT NULL ENABLE);
+  ALTER TABLE "DB"."FITTERS" MODIFY ("WORK_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."FITTERS" ADD CHECK (category>0) ENABLE;
+  ALTER TABLE "DB"."FITTERS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."FITTERS" ADD CONSTRAINT "UNIQ_WORK_ID_FITT" UNIQUE ("WORK_ID")
+  USING INDEX "DB"."UNIQ_WORK_ID_FITT"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table EXPERIMENTS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."EXPERIMENTS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."EXPERIMENTS" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "DB"."EXPERIMENTS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."EXPERIMENTS" ADD CONSTRAINT "UNIQ_EXP_NAME" UNIQUE ("NAME")
+  USING INDEX "DB"."UNIQ_EXP_NAME"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TECHNICS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."TECHNICS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."TECHNICS" MODIFY ("FIRST_NAME" NOT NULL ENABLE);
+  ALTER TABLE "DB"."TECHNICS" MODIFY ("LAST_NAME" NOT NULL ENABLE);
+  ALTER TABLE "DB"."TECHNICS" MODIFY ("PATRONYMIC" NOT NULL ENABLE);
+  ALTER TABLE "DB"."TECHNICS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."TECHNICS" ADD CONSTRAINT "UNIQ_NAME_TECHS" UNIQUE ("FIRST_NAME", "LAST_NAME", "PATRONYMIC")
+  USING INDEX "DB"."UNIQ_NAME_TECHS"  ENABLE;
 --------------------------------------------------------
 --  Constraints for Table ENGINEERS
 --------------------------------------------------------
@@ -2559,57 +2727,7 @@ ALTER TRIGGER "DB"."VER_LAB_SUP_WS" ENABLE;
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
   ALTER TABLE "DB"."ENGINEERS" ADD CONSTRAINT "UNIQ_TECH_ID_ENG" UNIQUE ("TECH_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table GLIDERS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."GLIDERS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."GLIDERS" MODIFY ("WINGSPAN" NOT NULL ENABLE);
-  ALTER TABLE "DB"."GLIDERS" MODIFY ("NAME" NOT NULL ENABLE);
-  ALTER TABLE "DB"."GLIDERS" MODIFY ("PROD_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."GLIDERS" ADD CHECK (wingspan>0) ENABLE;
-  ALTER TABLE "DB"."GLIDERS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."GLIDERS" ADD CONSTRAINT "UNIQ_NAME_GLID" UNIQUE ("NAME")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table SECTORS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."SECTORS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."SECTORS" MODIFY ("NAME" NOT NULL ENABLE);
-  ALTER TABLE "DB"."SECTORS" MODIFY ("WORKSHOP_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."SECTORS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."SECTORS" ADD CONSTRAINT "UNIQ_TECH_ID_SEC" UNIQUE ("TECH_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."SECTORS" ADD CONSTRAINT "UNIQUE_SEC_NAME" UNIQUE ("NAME")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
+  USING INDEX "DB"."UNIQ_TECH_ID_ENG"  ENABLE;
 --------------------------------------------------------
 --  Constraints for Table WELDERS
 --------------------------------------------------------
@@ -2624,6 +2742,87 @@ ALTER TRIGGER "DB"."VER_LAB_SUP_WS" ENABLE;
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
   ALTER TABLE "DB"."WELDERS" ADD CONSTRAINT "UNIQ_WORK_ID_WELD" UNIQUE ("WORK_ID")
+  USING INDEX "DB"."UNIQ_WORK_ID_WELD"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table LAB_SUP_WS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."LAB_SUP_WS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."LAB_SUP_WS" MODIFY ("LAB_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."LAB_SUP_WS" MODIFY ("WS_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."LAB_SUP_WS" ADD CONSTRAINT "UNIQUE_LAB_WS" UNIQUE ("LAB_ID", "WS_ID")
+  USING INDEX "DB"."UNIQUE_LAB_WS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table HANG_GLIDERS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."HANG_GLIDERS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."HANG_GLIDERS" MODIFY ("AERO_QUAL" NOT NULL ENABLE);
+  ALTER TABLE "DB"."HANG_GLIDERS" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "DB"."HANG_GLIDERS" MODIFY ("PROD_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."HANG_GLIDERS" ADD CHECK (aero_qual>0) ENABLE;
+  ALTER TABLE "DB"."HANG_GLIDERS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."HANG_GLIDERS" ADD CONSTRAINT "UNIQ_NAME_HG" UNIQUE ("NAME")
+  USING INDEX "DB"."UNIQ_NAME_HG"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TECHNICIANS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."TECHNICIANS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."TECHNICIANS" MODIFY ("CATEGORY" NOT NULL ENABLE);
+  ALTER TABLE "DB"."TECHNICIANS" MODIFY ("TECH_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."TECHNICIANS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."TECHNICIANS" ADD CONSTRAINT "UNIQ_TECH_ID_TECH" UNIQUE ("TECH_ID")
+  USING INDEX "DB"."UNIQ_TECH_ID_TECH"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TEAMS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."TEAMS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."TEAMS" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "DB"."TEAMS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."TEAMS" ADD CONSTRAINT "UNIQUE_LEAD" UNIQUE ("LEAD_ID")
+  USING INDEX "DB"."UNIQUE_LEAD"  ENABLE;
+  ALTER TABLE "DB"."TEAMS" ADD CONSTRAINT "UNIQUE_NAME_TEAM" UNIQUE ("NAME")
+  USING INDEX "DB"."UNIQUE_NAME_TEAM"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table SECTORS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."SECTORS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."SECTORS" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "DB"."SECTORS" MODIFY ("WORKSHOP_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."SECTORS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."SECTORS" ADD CONSTRAINT "UNIQ_TECH_ID_SEC" UNIQUE ("TECH_ID")
+  USING INDEX "DB"."UNIQ_TECH_ID_SEC"  ENABLE;
+  ALTER TABLE "DB"."SECTORS" ADD CONSTRAINT "UNIQUE_SEC_NAME" UNIQUE ("NAME")
+  USING INDEX "DB"."UNIQUE_SEC_NAME"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table PRODUCTS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."PRODUCTS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."PRODUCTS" ADD PRIMARY KEY ("ID")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
@@ -2644,11 +2843,7 @@ ALTER TRIGGER "DB"."VER_LAB_SUP_WS" ENABLE;
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
   ALTER TABLE "DB"."OTHER_PRODS" ADD CONSTRAINT "UNIQ_NAME_OTHER_PROD" UNIQUE ("NAME")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
+  USING INDEX "DB"."UNIQ_NAME_OTHER_PROD"  ENABLE;
 --------------------------------------------------------
 --  Constraints for Table JOBS
 --------------------------------------------------------
@@ -2664,244 +2859,7 @@ ALTER TRIGGER "DB"."VER_LAB_SUP_WS" ENABLE;
   TABLESPACE "USERS"  ENABLE;
   ALTER TABLE "DB"."JOBS" ADD CONSTRAINT "UNIQ_JOB_SEC" UNIQUE ("SEC_ID") DISABLE;
   ALTER TABLE "DB"."JOBS" ADD CONSTRAINT "UNIQ_JOB_NAME" UNIQUE ("NAME")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table TOOLS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."TOOLS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."TOOLS" MODIFY ("LAB_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."TOOLS" MODIFY ("NAME" NOT NULL ENABLE);
-  ALTER TABLE "DB"."TOOLS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."TOOLS" ADD CONSTRAINT "UNIQ_TOOL_NAME" UNIQUE ("NAME")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table WORKERS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."WORKERS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."WORKERS" MODIFY ("FIRST_NAME" NOT NULL ENABLE);
-  ALTER TABLE "DB"."WORKERS" MODIFY ("LAST_NAME" NOT NULL ENABLE);
-  ALTER TABLE "DB"."WORKERS" MODIFY ("PATRONYMIC" NOT NULL ENABLE);
-  ALTER TABLE "DB"."WORKERS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."WORKERS" ADD CONSTRAINT "UNIQ_NAME_WORK" UNIQUE ("FIRST_NAME", "LAST_NAME", "PATRONYMIC")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table COLLECTORS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."COLLECTORS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."COLLECTORS" MODIFY ("WORK_EXP" NOT NULL ENABLE);
-  ALTER TABLE "DB"."COLLECTORS" MODIFY ("WORK_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."COLLECTORS" ADD CHECK (work_exp>-1) ENABLE;
-  ALTER TABLE "DB"."COLLECTORS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."COLLECTORS" ADD CONSTRAINT "UNIQ_WORK_ID_COLL" UNIQUE ("WORK_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table ROCKETS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."ROCKETS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."ROCKETS" MODIFY ("POWER" NOT NULL ENABLE);
-  ALTER TABLE "DB"."ROCKETS" MODIFY ("NAME" NOT NULL ENABLE);
-  ALTER TABLE "DB"."ROCKETS" MODIFY ("PROD_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."ROCKETS" ADD CHECK (power>0) ENABLE;
-  ALTER TABLE "DB"."ROCKETS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."ROCKETS" ADD CONSTRAINT "UNIQ_NAME_ROCKET" UNIQUE ("NAME")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table WORKSHOPS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."WORKSHOPS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."WORKSHOPS" MODIFY ("NAME" NOT NULL ENABLE);
-  ALTER TABLE "DB"."WORKSHOPS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."WORKSHOPS" ADD CONSTRAINT "UNIQ_TECH_ID_WS" UNIQUE ("TECH_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."WORKSHOPS" ADD CONSTRAINT "UNIQUE_WS_NAME" UNIQUE ("NAME")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table TEAMS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."TEAMS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."TEAMS" MODIFY ("NAME" NOT NULL ENABLE);
-  ALTER TABLE "DB"."TEAMS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."TEAMS" ADD CONSTRAINT "UNIQUE_LEAD" UNIQUE ("LEAD_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."TEAMS" ADD CONSTRAINT "UNIQUE_NAME_TEAM" UNIQUE ("NAME")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table PRODUCTS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."PRODUCTS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."PRODUCTS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table LABORATORIES
---------------------------------------------------------
-
-  ALTER TABLE "DB"."LABORATORIES" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."LABORATORIES" MODIFY ("NAME" NOT NULL ENABLE);
-  ALTER TABLE "DB"."LABORATORIES" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."LABORATORIES" ADD CONSTRAINT "UNIQ_LAB_NAME" UNIQUE ("NAME")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table TURNERS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."TURNERS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."TURNERS" MODIFY ("WORK_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."TURNERS" ADD CHECK (amount_fingers>0) ENABLE;
-  ALTER TABLE "DB"."TURNERS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."TURNERS" ADD CONSTRAINT "UNIQ_WORK_ID_TURN" UNIQUE ("WORK_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table ACCOUNTS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."ACCOUNTS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."ACCOUNTS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."ACCOUNTS" ADD CONSTRAINT "UNIQUE_ACC" UNIQUE ("LOGIN", "PAS")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table EXP_TOOLS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."EXP_TOOLS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."EXP_TOOLS" MODIFY ("EXP_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."EXP_TOOLS" MODIFY ("TOOL_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."EXP_TOOLS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."EXP_TOOLS" ADD CONSTRAINT "UNIQUE_EXP_TOOL" UNIQUE ("EXP_ID", "TOOL_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table HANG_GLIDERS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."HANG_GLIDERS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."HANG_GLIDERS" MODIFY ("AERO_QUAL" NOT NULL ENABLE);
-  ALTER TABLE "DB"."HANG_GLIDERS" MODIFY ("NAME" NOT NULL ENABLE);
-  ALTER TABLE "DB"."HANG_GLIDERS" MODIFY ("PROD_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."HANG_GLIDERS" ADD CHECK (aero_qual>0) ENABLE;
-  ALTER TABLE "DB"."HANG_GLIDERS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."HANG_GLIDERS" ADD CONSTRAINT "UNIQ_NAME_HG" UNIQUE ("NAME")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
+  USING INDEX "DB"."UNIQ_JOB_NAME"  ENABLE;
 --------------------------------------------------------
 --  Constraints for Table MASTERS
 --------------------------------------------------------
@@ -2915,192 +2873,23 @@ ALTER TRIGGER "DB"."VER_LAB_SUP_WS" ENABLE;
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
   ALTER TABLE "DB"."MASTERS" ADD CONSTRAINT "UNIQ_TECH_ID_MASTERS" UNIQUE ("TECH_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
+  USING INDEX "DB"."UNIQ_TECH_ID_MASTERS"  ENABLE;
 --------------------------------------------------------
---  Constraints for Table OTHER_WORKERS
+--  Constraints for Table WORKSHOPS
 --------------------------------------------------------
 
-  ALTER TABLE "DB"."OTHER_WORKERS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."OTHER_WORKERS" MODIFY ("NAME_PROF" NOT NULL ENABLE);
-  ALTER TABLE "DB"."OTHER_WORKERS" MODIFY ("WORK_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."OTHER_WORKERS" ADD PRIMARY KEY ("ID")
+  ALTER TABLE "DB"."WORKSHOPS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."WORKSHOPS" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "DB"."WORKSHOPS" ADD PRIMARY KEY ("ID")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."OTHER_WORKERS" ADD CONSTRAINT "UNIQ_WORK_ID_OWORK" UNIQUE ("WORK_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table TECHNICS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."TECHNICS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."TECHNICS" MODIFY ("FIRST_NAME" NOT NULL ENABLE);
-  ALTER TABLE "DB"."TECHNICS" MODIFY ("LAST_NAME" NOT NULL ENABLE);
-  ALTER TABLE "DB"."TECHNICS" MODIFY ("PATRONYMIC" NOT NULL ENABLE);
-  ALTER TABLE "DB"."TECHNICS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."TECHNICS" ADD CONSTRAINT "UNIQ_NAME_TECHS" UNIQUE ("FIRST_NAME", "LAST_NAME", "PATRONYMIC")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table PRODUCTS_JOBS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."PRODUCTS_JOBS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."PRODUCTS_JOBS" MODIFY ("JOB_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."PRODUCTS_JOBS" MODIFY ("ORDER_NUM" NOT NULL ENABLE);
-  ALTER TABLE "DB"."PRODUCTS_JOBS" MODIFY ("PROD_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."PRODUCTS_JOBS" MODIFY ("TEAM_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."PRODUCTS_JOBS" ADD CHECK (order_num>0) ENABLE;
-  ALTER TABLE "DB"."PRODUCTS_JOBS" ADD CONSTRAINT "CHECK_TIME_JOB" CHECK (time_end>=time_begin) ENABLE;
-  ALTER TABLE "DB"."PRODUCTS_JOBS" MODIFY ("TIME_BEGIN" NOT NULL ENABLE);
-  ALTER TABLE "DB"."PRODUCTS_JOBS" ADD CONSTRAINT "UNIQUE_PROD_JOB" UNIQUE ("PROD_ID", "JOB_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."PRODUCTS_JOBS" ADD CONSTRAINT "UNIQUE_ORDER_JOB" UNIQUE ("PROD_ID", "ORDER_NUM")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."PRODUCTS_JOBS" MODIFY ("TIME_END" NOT NULL ENABLE);
-  ALTER TABLE "DB"."PRODUCTS_JOBS" ADD CONSTRAINT "SYS_C008772" PRIMARY KEY ("ID", "JOB_ID", "ORDER_NUM", "PROD_ID", "TIME_BEGIN", "TIME_END", "TEAM_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table TECHNOLOGISTS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."TECHNOLOGISTS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."TECHNOLOGISTS" MODIFY ("TECHNOLOGY_DEV" NOT NULL ENABLE);
-  ALTER TABLE "DB"."TECHNOLOGISTS" MODIFY ("TECH_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."TECHNOLOGISTS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."TECHNOLOGISTS" ADD CONSTRAINT "UNIQ_TECH_ID_TECHNOLOGISTS" UNIQUE ("TECH_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table EXPERIMENTS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."EXPERIMENTS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."EXPERIMENTS" MODIFY ("NAME" NOT NULL ENABLE);
-  ALTER TABLE "DB"."EXPERIMENTS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."EXPERIMENTS" ADD CONSTRAINT "UNIQ_EXP_NAME" UNIQUE ("NAME")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table FITTERS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."FITTERS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."FITTERS" MODIFY ("CATEGORY" NOT NULL ENABLE);
-  ALTER TABLE "DB"."FITTERS" MODIFY ("WORK_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."FITTERS" ADD CHECK (category>0) ENABLE;
-  ALTER TABLE "DB"."FITTERS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."FITTERS" ADD CONSTRAINT "UNIQ_WORK_ID_FITT" UNIQUE ("WORK_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table HELICOPTERS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."HELICOPTERS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."HELICOPTERS" MODIFY ("SPEED" NOT NULL ENABLE);
-  ALTER TABLE "DB"."HELICOPTERS" MODIFY ("NAME" NOT NULL ENABLE);
-  ALTER TABLE "DB"."HELICOPTERS" MODIFY ("PROD_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."HELICOPTERS" ADD CHECK (speed>0) ENABLE;
-  ALTER TABLE "DB"."HELICOPTERS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."HELICOPTERS" ADD CONSTRAINT "UNIQ_NAME_HELI" UNIQUE ("NAME")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table LAB_SUP_WS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."LAB_SUP_WS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."LAB_SUP_WS" MODIFY ("LAB_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."LAB_SUP_WS" MODIFY ("WS_ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."LAB_SUP_WS" ADD CONSTRAINT "UNIQUE_LAB_WS" UNIQUE ("LAB_ID", "WS_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table INVESTIGATORS
---------------------------------------------------------
-
-  ALTER TABLE "DB"."INVESTIGATORS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "DB"."INVESTIGATORS" MODIFY ("FIRST_NAME" NOT NULL ENABLE);
-  ALTER TABLE "DB"."INVESTIGATORS" MODIFY ("LAST_NAME" NOT NULL ENABLE);
-  ALTER TABLE "DB"."INVESTIGATORS" MODIFY ("PATRONYMIC" NOT NULL ENABLE);
-  ALTER TABLE "DB"."INVESTIGATORS" ADD PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."INVESTIGATORS" ADD CONSTRAINT "UNIQ_NAME_INV" UNIQUE ("FIRST_NAME", "LAST_NAME", "PATRONYMIC")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."WORKSHOPS" ADD CONSTRAINT "UNIQ_TECH_ID_WS" UNIQUE ("TECH_ID")
+  USING INDEX "DB"."UNIQ_TECH_ID_WS"  ENABLE;
+  ALTER TABLE "DB"."WORKSHOPS" ADD CONSTRAINT "UNIQUE_WS_NAME" UNIQUE ("NAME")
+  USING INDEX "DB"."UNIQUE_WS_NAME"  ENABLE;
 --------------------------------------------------------
 --  Constraints for Table PLANES
 --------------------------------------------------------
@@ -3117,41 +2906,204 @@ ALTER TRIGGER "DB"."VER_LAB_SUP_WS" ENABLE;
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
   ALTER TABLE "DB"."PLANES" ADD CONSTRAINT "UNIQ_NAME_PLANE" UNIQUE ("NAME")
+  USING INDEX "DB"."UNIQ_NAME_PLANE"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TURNERS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."TURNERS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."TURNERS" MODIFY ("WORK_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."TURNERS" ADD CHECK (amount_fingers>0) ENABLE;
+  ALTER TABLE "DB"."TURNERS" ADD PRIMARY KEY ("ID")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."TURNERS" ADD CONSTRAINT "UNIQ_WORK_ID_TURN" UNIQUE ("WORK_ID")
+  USING INDEX "DB"."UNIQ_WORK_ID_TURN"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table COLLECTORS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."COLLECTORS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."COLLECTORS" MODIFY ("WORK_EXP" NOT NULL ENABLE);
+  ALTER TABLE "DB"."COLLECTORS" MODIFY ("WORK_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."COLLECTORS" ADD CHECK (work_exp>-1) ENABLE;
+  ALTER TABLE "DB"."COLLECTORS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."COLLECTORS" ADD CONSTRAINT "UNIQ_WORK_ID_COLL" UNIQUE ("WORK_ID")
+  USING INDEX "DB"."UNIQ_WORK_ID_COLL"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table LABORATORIES
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."LABORATORIES" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."LABORATORIES" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "DB"."LABORATORIES" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."LABORATORIES" ADD CONSTRAINT "UNIQ_LAB_NAME" UNIQUE ("NAME")
+  USING INDEX "DB"."UNIQ_LAB_NAME"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table GLIDERS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."GLIDERS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."GLIDERS" MODIFY ("WINGSPAN" NOT NULL ENABLE);
+  ALTER TABLE "DB"."GLIDERS" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "DB"."GLIDERS" MODIFY ("PROD_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."GLIDERS" ADD CHECK (wingspan>0) ENABLE;
+  ALTER TABLE "DB"."GLIDERS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."GLIDERS" ADD CONSTRAINT "UNIQ_NAME_GLID" UNIQUE ("NAME")
+  USING INDEX "DB"."UNIQ_NAME_GLID"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table PRODUCTS_JOBS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."PRODUCTS_JOBS" ADD CONSTRAINT "SYS_C008772" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."PRODUCTS_JOBS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."PRODUCTS_JOBS" MODIFY ("JOB_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."PRODUCTS_JOBS" MODIFY ("ORDER_NUM" NOT NULL ENABLE);
+  ALTER TABLE "DB"."PRODUCTS_JOBS" MODIFY ("PROD_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."PRODUCTS_JOBS" MODIFY ("TEAM_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."PRODUCTS_JOBS" ADD CHECK (order_num>0) ENABLE;
+  ALTER TABLE "DB"."PRODUCTS_JOBS" ADD CONSTRAINT "CHECK_TIME_JOB" CHECK (time_end>=time_begin) ENABLE;
+  ALTER TABLE "DB"."PRODUCTS_JOBS" MODIFY ("TIME_BEGIN" NOT NULL ENABLE);
+  ALTER TABLE "DB"."PRODUCTS_JOBS" ADD CONSTRAINT "UNIQUE_PROD_JOB" UNIQUE ("PROD_ID", "JOB_ID")
+  USING INDEX "DB"."UNIQUE_PROD_JOB"  ENABLE;
+  ALTER TABLE "DB"."PRODUCTS_JOBS" ADD CONSTRAINT "UNIQUE_ORDER_JOB" UNIQUE ("PROD_ID", "ORDER_NUM")
+  USING INDEX "DB"."UNIQUE_ORDER_JOB"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table OTHER_WORKERS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."OTHER_WORKERS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."OTHER_WORKERS" MODIFY ("NAME_PROF" NOT NULL ENABLE);
+  ALTER TABLE "DB"."OTHER_WORKERS" MODIFY ("WORK_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."OTHER_WORKERS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."OTHER_WORKERS" ADD CONSTRAINT "UNIQ_WORK_ID_OWORK" UNIQUE ("WORK_ID")
+  USING INDEX "DB"."UNIQ_WORK_ID_OWORK"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TOOLS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."TOOLS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."TOOLS" MODIFY ("LAB_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."TOOLS" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "DB"."TOOLS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."TOOLS" ADD CONSTRAINT "UNIQ_TOOL_NAME" UNIQUE ("NAME")
+  USING INDEX "DB"."UNIQ_TOOL_NAME"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table HELICOPTERS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."HELICOPTERS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."HELICOPTERS" MODIFY ("SPEED" NOT NULL ENABLE);
+  ALTER TABLE "DB"."HELICOPTERS" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "DB"."HELICOPTERS" MODIFY ("PROD_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."HELICOPTERS" ADD CHECK (speed>0) ENABLE;
+  ALTER TABLE "DB"."HELICOPTERS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."HELICOPTERS" ADD CONSTRAINT "UNIQ_NAME_HELI" UNIQUE ("NAME")
+  USING INDEX "DB"."UNIQ_NAME_HELI"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TECHNOLOGISTS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."TECHNOLOGISTS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."TECHNOLOGISTS" MODIFY ("TECHNOLOGY_DEV" NOT NULL ENABLE);
+  ALTER TABLE "DB"."TECHNOLOGISTS" MODIFY ("TECH_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."TECHNOLOGISTS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."TECHNOLOGISTS" ADD CONSTRAINT "UNIQ_TECH_ID_TECHNOLOGISTS" UNIQUE ("TECH_ID")
+  USING INDEX "DB"."UNIQ_TECH_ID_TECHNOLOGISTS"  ENABLE;
 --------------------------------------------------------
 --  Constraints for Table PRODUCTS_EXPS
 --------------------------------------------------------
 
+  ALTER TABLE "DB"."PRODUCTS_EXPS" MODIFY ("TIME_BEGIN" NOT NULL ENABLE);
+  ALTER TABLE "DB"."PRODUCTS_EXPS" ADD CONSTRAINT "UNIQUE_PROD_EXP" UNIQUE ("PROD_ID", "EXP_ID")
+  USING INDEX "DB"."UNIQUE_PROD_EXP"  ENABLE;
+  ALTER TABLE "DB"."PRODUCTS_EXPS" ADD CONSTRAINT "UNIQUE_ORDER_EXP" UNIQUE ("PROD_ID", "ORDER_NUM")
+  USING INDEX "DB"."UNIQUE_ORDER_EXP"  ENABLE;
+  ALTER TABLE "DB"."PRODUCTS_EXPS" ADD CONSTRAINT "SYS_C008805" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
   ALTER TABLE "DB"."PRODUCTS_EXPS" MODIFY ("ID" NOT NULL ENABLE);
   ALTER TABLE "DB"."PRODUCTS_EXPS" MODIFY ("EXP_ID" NOT NULL ENABLE);
   ALTER TABLE "DB"."PRODUCTS_EXPS" MODIFY ("ORDER_NUM" NOT NULL ENABLE);
   ALTER TABLE "DB"."PRODUCTS_EXPS" MODIFY ("PROD_ID" NOT NULL ENABLE);
   ALTER TABLE "DB"."PRODUCTS_EXPS" ADD CHECK (order_num>0) ENABLE;
   ALTER TABLE "DB"."PRODUCTS_EXPS" ADD CONSTRAINT "CHECK_TIME_EXP" CHECK (time_end>=time_begin) ENABLE;
-  ALTER TABLE "DB"."PRODUCTS_EXPS" MODIFY ("TIME_BEGIN" NOT NULL ENABLE);
-  ALTER TABLE "DB"."PRODUCTS_EXPS" ADD CONSTRAINT "UNIQUE_PROD_EXP" UNIQUE ("PROD_ID", "EXP_ID")
+--------------------------------------------------------
+--  Constraints for Table ROCKETS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."ROCKETS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."ROCKETS" MODIFY ("POWER" NOT NULL ENABLE);
+  ALTER TABLE "DB"."ROCKETS" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "DB"."ROCKETS" MODIFY ("PROD_ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."ROCKETS" ADD CHECK (power>0) ENABLE;
+  ALTER TABLE "DB"."ROCKETS" ADD PRIMARY KEY ("ID")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."PRODUCTS_EXPS" ADD CONSTRAINT "UNIQUE_ORDER_EXP" UNIQUE ("PROD_ID", "ORDER_NUM")
+  ALTER TABLE "DB"."ROCKETS" ADD CONSTRAINT "UNIQ_NAME_ROCKET" UNIQUE ("NAME")
+  USING INDEX "DB"."UNIQ_NAME_ROCKET"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table ACCOUNTS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."ACCOUNTS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "DB"."ACCOUNTS" ADD PRIMARY KEY ("ID")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "DB"."PRODUCTS_EXPS" MODIFY ("TIME_END" NOT NULL ENABLE);
-  ALTER TABLE "DB"."PRODUCTS_EXPS" ADD CONSTRAINT "SYS_C008805" PRIMARY KEY ("ID", "EXP_ID", "ORDER_NUM", "PROD_ID", "TIME_BEGIN", "TIME_END")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "DB"."ACCOUNTS" ADD CONSTRAINT "UNIQUE_ACC" UNIQUE ("LOGIN", "PAS")
+  USING INDEX "DB"."UNIQUE_ACC"  ENABLE;
 --------------------------------------------------------
 --  Ref Constraints for Table COLLECTORS
 --------------------------------------------------------
@@ -3242,6 +3194,12 @@ ALTER TRIGGER "DB"."VER_LAB_SUP_WS" ENABLE;
 
   ALTER TABLE "DB"."PLANES" ADD CONSTRAINT "FK_PLANE" FOREIGN KEY ("PROD_ID")
 	  REFERENCES "DB"."PRODUCTS" ("ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table PRODUCTS
+--------------------------------------------------------
+
+  ALTER TABLE "DB"."PRODUCTS" ADD CONSTRAINT "PRODUCTS_FK1" FOREIGN KEY ("WORKSHOP_ID")
+	  REFERENCES "DB"."WORKSHOPS" ("ID") ON DELETE CASCADE ENABLE;
 --------------------------------------------------------
 --  Ref Constraints for Table PRODUCTS_EXPS
 --------------------------------------------------------
