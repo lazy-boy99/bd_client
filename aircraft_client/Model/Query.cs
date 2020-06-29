@@ -14,7 +14,6 @@ namespace aircraft_client.Model
     {
         
 
-
         public static string GetExperimentsByScientist(string nameScientist)
         {
             var name = nameScientist.Split(' ');
@@ -72,6 +71,17 @@ namespace aircraft_client.Model
         {
             var labIdQuery = QueryFormatter.SelectFormatter.Get("id", "laboratories", "name='" + name+"'");
             return QueryFormatter.SelectFormatter.Get("name", "tools",  labIdQuery,"lab_id");
+        }
+
+        public static string GetProductsNames(string id)
+        {
+            var query=SelectFormatter.Union(new List<string> { "name", "prod_id" }, new List<string> { "rockets"
+                            , "gliders"
+                            , "hang_gliders"
+                            , "helicopters"
+                            , "planes"
+                            , "other_prods" });
+            return SelectFormatter.Get("name", "("+query+")", id, "prod_id" );
         }
 
         public static string GetProductsNames()=>
@@ -188,11 +198,17 @@ namespace aircraft_client.Model
 
         public static string GetProdIdByWsName(string WsName,ProdChoosenMode mode,string timeBeg, string timeEnd) {
             var query = QueryFormatter.SelectFormatter.Get("id" , "workshops", "name='" + WsName + "'");
-            var conditionLs = new List<string>();
-            AddConditionsByMode(conditionLs, mode,timeBeg,timeEnd);
-            conditionLs.Add(QueryFormatter.In("prod_id", query));
-           return QueryFormatter.SelectFormatter.Get( "prod_id" , "products_jobs", conditionLs);
-
+            if (mode == ProdChoosenMode.ProdType)
+            {
+                return QueryFormatter.SelectFormatter.Get("id", "products", "workshop_id=(" + query + ")");
+            }
+            else
+            {
+                var conditionLs = new List<string>();
+                AddConditionsByMode(conditionLs, mode, timeBeg, timeEnd);
+                conditionLs.Add(QueryFormatter.In("prod_id", query));
+               return QueryFormatter.SelectFormatter.Get( "prod_id" , "products_jobs", conditionLs);
+            }
         }
 
         public static string GetWorkIdByWsName(string WsName)
@@ -237,9 +253,16 @@ namespace aircraft_client.Model
 
         public static string GetProdIdByMode(ProdChoosenMode mode, string timeBeg, string timeEnd)
         {
-            var conditionLs = new List<string>();
-            AddConditionsByMode(conditionLs, mode,timeBeg,timeEnd);   
-            return QueryFormatter.SelectFormatter.Get("prod_id", "products_jobs", conditionLs); 
+            if(mode == ProdChoosenMode.ProdType)
+            {
+                return QueryFormatter.SelectFormatter.Get("id", "products");
+            }
+            else
+            {
+                var conditionLs = new List<string>();
+                AddConditionsByMode(conditionLs, mode,timeBeg,timeEnd);   
+                return QueryFormatter.SelectFormatter.Get("prod_id", "products_jobs", conditionLs); 
+            }
         }
 
         private static void AddConditionsByMode(List <string> conditions,ProdChoosenMode mode, string timeBeg, string timeEnd)
@@ -256,6 +279,7 @@ namespace aircraft_client.Model
                     break;
             }
         }
+
 
         public static string GetJobsByProductName(string prodName)
         {
@@ -420,7 +444,19 @@ namespace aircraft_client.Model
 
         public static string GetLaboratories()=>
             SelectFormatter.Get("name", "laboratories");
-        
+
+        public static string GetToolsByProdIdLab(string prodId,string labName) {
+            var queryProd = SelectFormatter.Get("exp_id","products_exps",prodId,"prod_id");
+            queryProd = SelectFormatter.Get("tool_id", "exp_tools", queryProd, "exp_id");
+            queryProd = SelectFormatter.Get("name", "tools", queryProd, "lab_id");
+
+            var queryLab = SelectFormatter.Get("id", "laboratories", "name='" + labName + "'");
+            queryLab = SelectFormatter.Get("name" , "tools", queryLab, "lab_id");
+
+            var query=QueryFormatter.Join(queryLab,queryProd,new List<string> { "name=name" },"t1","t2");
+            return SelectFormatter.Get("t1.name", "(" + query + ")");
+        }
+
         public static string GetInvestigatorsByProduct(string subQuery,string dateStart
             ,string dateEnd)
         {

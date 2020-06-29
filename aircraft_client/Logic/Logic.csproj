@@ -83,6 +83,7 @@
     <Compile Include="Presenters\TeamPresenter.cs" />
     <Compile Include="Presenters\TechnichsChoosePresenter.cs" />
     <Compile Include="Presenters\TechnicsPresenter.cs" />
+    <Compile Include="Presenters\ToolsChoosePresenter.cs" />
     <Compile Include="Presenters\WorkersChoosePresenter.cs" />
     <Compile Include="Presenters\WorkersPresenter.cs" />
   </ItemGroup>

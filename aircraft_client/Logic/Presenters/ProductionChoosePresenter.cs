@@ -39,7 +39,15 @@ namespace aircraft_client.Logic.Presenters
                                         , timeEnd),
                 _ => throw new NotImplementedException("Невозможно определить место выборки"),
             };
-            query = QueryFormatter.SelectFormatter.Get("*", "(" + query + ")", prodIdQuery, "prod_id");
+
+            if(View.GetSelectedChoosenMode() == ProdChoosenMode.ProdType)
+            {
+                query= QueryFormatter.SelectFormatter.Get("distinct type", "(" + query + ")", prodIdQuery, "prod_id");
+            }
+            else
+            {
+                query = QueryFormatter.SelectFormatter.Get("*", "(" + query + ")", prodIdQuery, "prod_id");
+            }
             Controller.Run<ProductionPresenter, string>(query);
         }
     }

@@ -82,6 +82,7 @@
     <Compile Include="Interfaces\ISectorChooseView.cs" />
     <Compile Include="Interfaces\ITeamView.cs" />
     <Compile Include="Interfaces\ITechnicsView.cs" />
+    <Compile Include="Interfaces\IToolsChooseView.cs" />
     <Compile Include="Interfaces\IView.cs" />
     <Compile Include="Interfaces\IWorkersView.cs" />
   </ItemGroup>

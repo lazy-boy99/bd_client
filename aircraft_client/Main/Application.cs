@@ -29,6 +29,7 @@ namespace aircraft_client.Main
                         .RegisterView<ILoginView, LoginForm>()
                         .RegisterView<IChooseView, ChooseForm>()
                         .RegisterView<IDirectorScientistsView, DirectorScientistsForm>()
+                        .RegisterView<IToolsChooseView, ToolsChooseForm>()
                         .RegisterView<IDirectorView, DirectorForm>()
                         .RegisterView<IDirectorWorkersView, DirectorWorkersForm>()
                         .RegisterView<IEquipmentManagerView, EquipmentManagerForm>()

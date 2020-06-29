@@ -12,7 +12,8 @@ namespace aircraft_client.Model
         {
             Assembled,
             Assembling,
-            ProdType
+            ProdType,
+            Prod
         }
 
         public enum ChoosenPlace
@@ -67,6 +68,7 @@ namespace aircraft_client.Model
                 "Виды изделий" => ProdChoosenMode.ProdType,
                 "Собраные изделия" => ProdChoosenMode.Assembled,
                 "Собираемые изделия" => ProdChoosenMode.Assembling,
+                "Перечень изделий"=>ProdChoosenMode.Prod,
                 _ => throw new NotImplementedException("name of mode is null!!")
             };
 

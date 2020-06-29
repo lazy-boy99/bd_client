@@ -44,6 +44,7 @@
             this.RocketsButton = new System.Windows.Forms.RadioButton();
             this.AllProducts = new System.Windows.Forms.RadioButton();
             this.DateEndPicker = new System.Windows.Forms.DateTimePicker();
+            this.ProdButton = new System.Windows.Forms.RadioButton();
             this.ChoosenPlaceBox.SuspendLayout();
             this.ChooseModeBox.SuspendLayout();
             this.CategoryBox.SuspendLayout();
@@ -51,7 +52,7 @@
             // 
             // ChoosenPlaceBox
             // 
-            this.ChoosenPlaceBox.Location = new System.Drawing.Point(12, 113);
+            this.ChoosenPlaceBox.Location = new System.Drawing.Point(12, 132);
             this.ChoosenPlaceBox.Size = new System.Drawing.Size(426, 67);
             this.ChoosenPlaceBox.TabIndex = 7;
             // 
@@ -91,6 +92,8 @@
             // 
             // ChooseModeBox
             // 
+            this.ChooseModeBox.Controls.Add(this.DateEndPicker);
+            this.ChooseModeBox.Controls.Add(this.ProdButton);
             this.ChooseModeBox.Controls.Add(this.label4);
             this.ChooseModeBox.Controls.Add(this.label3);
             this.ChooseModeBox.Controls.Add(this.DateBegPicker);
@@ -99,7 +102,7 @@
             this.ChooseModeBox.Controls.Add(this.ProdTypeButton);
             this.ChooseModeBox.Location = new System.Drawing.Point(12, 12);
             this.ChooseModeBox.Name = "ChooseModeBox";
-            this.ChooseModeBox.Size = new System.Drawing.Size(426, 95);
+            this.ChooseModeBox.Size = new System.Drawing.Size(426, 114);
             this.ChooseModeBox.TabIndex = 6;
             this.ChooseModeBox.TabStop = false;
             this.ChooseModeBox.Text = "Задайте конфигурацию выборки ";
@@ -107,7 +110,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(277, 44);
+            this.label4.Location = new System.Drawing.Point(277, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 13);
             this.label4.TabIndex = 9;
@@ -116,7 +119,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(135, 44);
+            this.label3.Location = new System.Drawing.Point(135, 72);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 13);
             this.label3.TabIndex = 8;
@@ -124,7 +127,7 @@
             // 
             // DateBegPicker
             // 
-            this.DateBegPicker.Location = new System.Drawing.Point(133, 60);
+            this.DateBegPicker.Location = new System.Drawing.Point(133, 88);
             this.DateBegPicker.Name = "DateBegPicker";
             this.DateBegPicker.Size = new System.Drawing.Size(140, 20);
             this.DateBegPicker.TabIndex = 3;
@@ -132,7 +135,7 @@
             // ProdAssemblingButton
             // 
             this.ProdAssemblingButton.AutoSize = true;
-            this.ProdAssemblingButton.Location = new System.Drawing.Point(230, 19);
+            this.ProdAssemblingButton.Location = new System.Drawing.Point(6, 52);
             this.ProdAssemblingButton.Name = "ProdAssemblingButton";
             this.ProdAssemblingButton.Size = new System.Drawing.Size(135, 17);
             this.ProdAssemblingButton.TabIndex = 2;
@@ -143,7 +146,7 @@
             // ProdAssembledButton
             // 
             this.ProdAssembledButton.AutoSize = true;
-            this.ProdAssembledButton.Location = new System.Drawing.Point(6, 60);
+            this.ProdAssembledButton.Location = new System.Drawing.Point(6, 88);
             this.ProdAssembledButton.Name = "ProdAssembledButton";
             this.ProdAssembledButton.Size = new System.Drawing.Size(121, 17);
             this.ProdAssembledButton.TabIndex = 1;
@@ -173,7 +176,7 @@
             this.CategoryBox.Controls.Add(this.AllProducts);
             this.CategoryBox.Location = new System.Drawing.Point(12, 206);
             this.CategoryBox.Name = "CategoryBox";
-            this.CategoryBox.Size = new System.Drawing.Size(420, 81);
+            this.CategoryBox.Size = new System.Drawing.Size(426, 81);
             this.CategoryBox.TabIndex = 7;
             this.CategoryBox.TabStop = false;
             this.CategoryBox.Text = "Выберете категорию";
@@ -257,17 +260,27 @@
             // 
             // DateEndPicker
             // 
-            this.DateEndPicker.Location = new System.Drawing.Point(291, 72);
+            this.DateEndPicker.Location = new System.Drawing.Point(275, 88);
             this.DateEndPicker.Name = "DateEndPicker";
             this.DateEndPicker.Size = new System.Drawing.Size(141, 20);
             this.DateEndPicker.TabIndex = 4;
+            // 
+            // ProdButton
+            // 
+            this.ProdButton.AutoSize = true;
+            this.ProdButton.Location = new System.Drawing.Point(245, 19);
+            this.ProdButton.Name = "ProdButton";
+            this.ProdButton.Size = new System.Drawing.Size(119, 17);
+            this.ProdButton.TabIndex = 10;
+            this.ProdButton.TabStop = true;
+            this.ProdButton.Text = "Перечень изделий";
+            this.ProdButton.UseVisualStyleBackColor = true;
             // 
             // ProductionChooseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 334);
-            this.Controls.Add(this.DateEndPicker);
             this.Controls.Add(this.CategoryBox);
             this.Controls.Add(this.ChooseModeBox);
             this.Name = "ProductionChooseForm";
@@ -277,7 +290,6 @@
             this.Controls.SetChildIndex(this.ContinueButton, 0);
             this.Controls.SetChildIndex(this.CancelButton, 0);
             this.Controls.SetChildIndex(this.CategoryBox, 0);
-            this.Controls.SetChildIndex(this.DateEndPicker, 0);
             this.ChoosenPlaceBox.ResumeLayout(false);
             this.ChoosenPlaceBox.PerformLayout();
             this.ChooseModeBox.ResumeLayout(false);
@@ -306,5 +318,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker DateBegPicker;
         private System.Windows.Forms.DateTimePicker DateEndPicker;
+        private System.Windows.Forms.RadioButton ProdButton;
     }
 }

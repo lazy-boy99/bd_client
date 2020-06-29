@@ -198,6 +198,12 @@
     <Compile Include="TechnicsForm.Designer.cs">
       <DependentUpon>TechnicsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolsChooseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolsChooseForm.Designer.cs">
+      <DependentUpon>ToolsChooseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkersChooseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TechnicsForm.resx">
       <DependentUpon>TechnicsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolsChooseForm.resx">
+      <DependentUpon>ToolsChooseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WorkersChooseForm.resx">
       <DependentUpon>WorkersChooseForm.cs</DependentUpon>

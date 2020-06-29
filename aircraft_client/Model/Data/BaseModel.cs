@@ -6,10 +6,8 @@ namespace aircraft_client.Model.Data
     public class BaseModel : IModel
     {
 
-
         private static DbDataAdapter Adapter { get;  set; }
         private static DbConnection Connection { get;  set; }
-        public string Context { get; set; }
 
         public void EstablishConnection(DbConnection connection,DbDataAdapter adapter)
         {

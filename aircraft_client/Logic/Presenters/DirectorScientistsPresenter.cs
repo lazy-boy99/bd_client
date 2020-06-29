@@ -21,7 +21,7 @@ namespace aircraft_client.Logic.Presenters
             View.LabsList += GetLabsByProduct;
             View.ProdsByLab += GetProductsByLab;
             View.ScientistListByProd += GetScientists;
-            View.ProdByScientist += GetProductsByScientist;
+            View.ExpTools += GetToolsByLabProd;
         }
 
         private void GetLabsByProduct()
@@ -42,16 +42,13 @@ namespace aircraft_client.Logic.Presenters
                 , string>(Query.GetProductsNames());
         }
 
-        private void GetProductsByScientist()
+        private void GetToolsByLabProd()
         {
             var query = QueryFormatter.SelectFormatter
-                           .Get(new List<string> { "first_name"
-                                , "last_name"
-                                , "patronymic" }
-                               , "investigators");
+                           .Get("name"
+                               , "laboratories");
             Controller.Run
-                <ChoosePresenter<DirectorScientistsPresenter, IDirectorScientistsView>
-                , string, string>(query, "Выберите научного сотрудника");
+                <ToolsChoosePresenter,string>(query);
         }
 
     }

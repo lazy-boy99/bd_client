@@ -19,14 +19,18 @@ namespace aircraft_client.WinForms
             LabsButton.Click += (sender, e) => Invoke(LabsList);
             ProdByLabButton.Click += (sender, e) => Invoke(ProdsByLab);
             ScientistButton.Click+= (sender, e) => Invoke(ScientistListByProd);
-            ProdByScientistButton.Click+= (sender, e) => Invoke(ProdByScientist);
+            ToolsByLab.Click+= (sender, e) => Invoke(ExpTools);
+        }
+
+        public DirectorScientistsForm() { 
+            InitializeComponent();
+
         }
 
 
-        
         public event Action LabsList;
         public event Action ProdsByLab;
         public event Action ScientistListByProd;
-        public event Action ProdByScientist;
+        public event Action ExpTools;
     }
 }

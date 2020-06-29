@@ -11,6 +11,6 @@ namespace aircraft_client.UI.Interfaces
         event Action LabsList;
         event Action ProdsByLab;
         event Action ScientistListByProd;
-        event Action ProdByScientist;
+        event Action ExpTools;
     }
 }

@@ -18,7 +18,13 @@ namespace aircraft_client.WinForms
             InitializeComponent();
             BackButton.Click += (sender, e) => Invoke(Back);
         }
-        
+
+        public BaseDataForm()
+        {
+            InitializeComponent();
+
+        }
+
         public void FillData(DataTable dt)
         {
             DataField.DataSource = dt;
