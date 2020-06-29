@@ -1,5 +1,5 @@
 ﻿host=localhost
 port=1521
-service name=orcldb
+service name=orclpdb
 user=db
 password=123
