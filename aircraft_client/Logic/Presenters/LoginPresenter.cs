@@ -41,11 +41,13 @@ namespace aircraft_client.Logic.Presenters
                 RoleView(GetInformation());
             }
             catch (ArgumentOutOfRangeException ex) { 
-                View.ShowError("Указаный пользователь не найден", "Пользователь не существует");
+                Controller.Run<ErrorPresenter,string,string>
+                    ("Указаный пользователь не найден", "Пользователь не существует");
             }
             catch (Exception ex)
             {
-                View.ShowError(ex.Message, ex.GetType().Name);
+                Controller.Run<ErrorPresenter, string, string>
+                    (ex.Message, ex.GetType().Name);
             }
         }
 

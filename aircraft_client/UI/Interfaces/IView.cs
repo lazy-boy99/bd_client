@@ -4,6 +4,5 @@ namespace aircraft_client.UI.Interfaces
     {
         void Show();
         void Close();
-        void ShowError(string errorMessage, string title);
     }
 }
