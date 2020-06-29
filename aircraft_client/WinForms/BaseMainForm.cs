@@ -21,10 +21,7 @@ namespace aircraft_client.WinForms
         {
 
         }
-        public void ShowError(string errorMessage, string title)
-        {
-            MessageBox.Show(errorMessage, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+        
 
         public new void Show()
         {

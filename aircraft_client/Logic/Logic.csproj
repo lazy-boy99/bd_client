@@ -68,6 +68,7 @@
     <Compile Include="Presenters\EquipmentManagerPresenter.cs" />
     <Compile Include="Presenters\DirectorTechnicsPresenter.cs" />
     <Compile Include="Presenters\DirectorPresenter.cs" />
+    <Compile Include="Presenters\ErrorPresenter.cs" />
     <Compile Include="Presenters\JobsPresenter.cs" />
     <Compile Include="Presenters\LeadWsPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />

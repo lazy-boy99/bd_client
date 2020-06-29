@@ -71,6 +71,7 @@
     <Compile Include="Interfaces\IDirectorView.cs" />
     <Compile Include="Interfaces\IDirectorWorkersView.cs" />
     <Compile Include="Interfaces\IEquipmentManagerView.cs" />
+    <Compile Include="Interfaces\IErrorView.cs" />
     <Compile Include="Interfaces\IJobsView.cs" />
     <Compile Include="Interfaces\ILeadWsView.cs" />
     <Compile Include="Interfaces\ILoginView.cs" />

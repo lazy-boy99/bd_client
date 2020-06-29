@@ -131,6 +131,7 @@
     <Compile Include="EquipmentManagerForm.Designer.cs">
       <DependentUpon>EquipmentManagerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ErrorForm.cs" />
     <Compile Include="JobsForm.cs">
       <SubType>Form</SubType>
     </Compile>
