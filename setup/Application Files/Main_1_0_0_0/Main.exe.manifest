@@ -42,26 +42,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="aircraft_client.Logic.dll" size="20992">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="aircraft_client.Logic.dll" size="22016">
       <assemblyIdentity name="aircraft_client.Logic" version="0.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>emiCAG07XTkf0MDYfgIWLBtUUVOu6wR+1OZkqb6W7NI=</dsig:DigestValue>
+        <dsig:DigestValue>38R+ts5zOfttwhvEV2uEp9JZOlcAkIfbkrgRQ7JhxJA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="aircraft_client.Model.dll" size="24064">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="aircraft_client.Model.dll" size="24576">
       <assemblyIdentity name="aircraft_client.Model" version="0.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>qlJXAI5h2e/P+DUpHiPEVHPNwC0AvHMg8AMNT0Vfjo8=</dsig:DigestValue>
+        <dsig:DigestValue>Jlj1c3eO7CKJqTcWHzo7izraylIpqVUzXA3bYQXD2Yg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WDVwKJxwmbddHO2Lq7vUOpXxaiiMKeWsUQbrFEc2kY0=</dsig:DigestValue>
+        <dsig:DigestValue>h+EePKi3zI1r5GzbKfE+dVas7bBPSCwLtrrBKPt2tp8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -97,7 +97,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kaBbRdP11s56168KqYySWi/xMKL2K1Do79gOoNqenHw=</dsig:DigestValue>
+        <dsig:DigestValue>78dZerKkXSY+O41acqWW7nINSHRNI+WO9mRwKpuRpeY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -126,14 +126,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinForms.dll" size="54784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinForms.dll" size="60416">
       <assemblyIdentity name="WinForms" version="0.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2Azru+8moNQE57AHrAQfjxrzn+bSG77GzCE10pQqjAA=</dsig:DigestValue>
+        <dsig:DigestValue>adv3qxWbpZRrRYxKapRMPjZpR/VuPqPWW7jGMRtBM7g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
