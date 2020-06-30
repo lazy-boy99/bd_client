@@ -124,7 +124,7 @@ namespace aircraft_client.Model
                         .Get(new List<string> { "name", "power", "prod_id", "'ракета' as type" }
                             , "rockets"),
                 CategoryProd.Gliders => QueryFormatter.SelectFormatter
-                        .Get(new List<string> { "name", "wingspan", "prod_id", "'ракета' as type" }
+                        .Get(new List<string> { "name", "wingspan", "prod_id", "'планер' as type" }
                             , "gliders"),
                 CategoryProd.ChooseProd=>"one product",
                 _ => throw new NotImplementedException("Выбраной категории не существует")
@@ -159,7 +159,7 @@ namespace aircraft_client.Model
                     , "other_workers", "name_prof"),
                 CategoryWorkers.Turners=> GetCategoryWorkerQuery("'токарь' as type"
                     , "turners", "amount_fingers"),
-                CategoryWorkers.Welders => GetCategoryWorkerQuery("'слесарь' as type"
+                CategoryWorkers.Welders => GetCategoryWorkerQuery("'сварщик' as type"
                     , "welders", "specialization"),
                 _ => throw new NotImplementedException("Выбраной категории не существует")
             };
@@ -197,18 +197,17 @@ namespace aircraft_client.Model
         }
 
         public static string GetProdIdByWsName(string WsName,ProdChoosenMode mode,string timeBeg, string timeEnd) {
-            var query = QueryFormatter.SelectFormatter.Get("id" , "workshops", "name='" + WsName + "'");
-            if (mode == ProdChoosenMode.ProdType)
-            {
-                return QueryFormatter.SelectFormatter.Get("id", "products", "workshop_id=(" + query + ")");
-            }
-            else
+            var query = SelectFormatter.Get("id" , "workshops", "name='" + WsName + "'");
+            query =SelectFormatter.Get("id", "products", "workshop_id=(" + query + ")");
+            if (mode != ProdChoosenMode.ProdType && mode != ProdChoosenMode.Prod)
             {
                 var conditionLs = new List<string>();
                 AddConditionsByMode(conditionLs, mode, timeBeg, timeEnd);
                 conditionLs.Add(QueryFormatter.In("prod_id", query));
-               return QueryFormatter.SelectFormatter.Get( "prod_id" , "products_jobs", conditionLs);
+                return QueryFormatter.SelectFormatter.Get("prod_id", "products_jobs", conditionLs);
             }
+            else
+                return query;
         }
 
         public static string GetWorkIdByWsName(string WsName)
@@ -221,15 +220,26 @@ namespace aircraft_client.Model
 
         public static string GetTechIdByWsName(string WsName)
         {
-            var query = QueryFormatter.SelectFormatter.Get("id", "workshops", "name='" + WsName + "'");
+            var leadWsQuery= SelectFormatter.Get("tech_id", "workshops", "name='" + WsName + "'");
+            var query = SelectFormatter.Get("id", "workshops", "name='" + WsName + "'");
+            var leadSecQuery= SelectFormatter.Get("tech_id", "sectors", query, "workshop_id");
             query = SelectFormatter.Get("id", "sectors", query, "workshop_id");
-            return SelectFormatter.Get("tech_id", "masters", query, "sec_id");
+            query =SelectFormatter.Get("tech_id", "masters", query, "sec_id");
+            query=SelectFormatter.Union(new List<string> { "tech_id"}
+            ,new List<string> { "(" + leadWsQuery+ ")","(" +leadSecQuery+ ")", "(" + query + ")" }
+            ,false);
+            return query;
         }
 
         public static string GetTechIdBySecName(string secName)
         {
+            var leadSecQuery = SelectFormatter.Get("tech_id", "sectors", "name='" + secName + "'");
             var query = SelectFormatter.Get("id", "sectors", "name='" + secName + "'");
-            return SelectFormatter.Get("tech_id", "masters", query, "sec_id");
+            query = SelectFormatter.Get("tech_id", "masters", query, "sec_id");
+            query = SelectFormatter.Union(new List<string> { "tech_id" }
+            , new List<string> {  "(" + leadSecQuery + ")", "(" + query + ")" }
+            , false);
+            return query;
         }
 
         public static string GetWorkIdBySecName(string secName)
@@ -253,7 +263,7 @@ namespace aircraft_client.Model
 
         public static string GetProdIdByMode(ProdChoosenMode mode, string timeBeg, string timeEnd)
         {
-            if(mode == ProdChoosenMode.ProdType)
+            if(mode == ProdChoosenMode.ProdType || mode == ProdChoosenMode.Prod)
             {
                 return QueryFormatter.SelectFormatter.Get("id", "products");
             }
@@ -384,13 +394,7 @@ namespace aircraft_client.Model
                    .Union(new List<string> { "name", "prod_id" }
                    , new List<string> { "rockets", "gliders", "hang_gliders", "helicopters", "planes", "other_prods" });
             query = SelectFormatter.Get("prod_id", "(" + query + ")", "name='" + prodName + "'");
-            var conditions = new List<string>
-            {
-                In("prod_id", query),
-                "time_end is null",
-                "time_begin<=to_date(TO_CHAR(SYSDATE, 'DD.MM.YYYY'),'dd.mm.yyyy')"
-            };
-            query = SelectFormatter.Get("team_id", "products_jobs", conditions);
+            query = SelectFormatter.Get("team_id", "products_jobs", query,"prod_id");
             var teamQuery = SelectFormatter.Get(new List<string> { "name", "id" }
                 , "teams", query, "id");
             query = SelectFormatter

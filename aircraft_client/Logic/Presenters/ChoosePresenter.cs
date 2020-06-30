@@ -4,6 +4,8 @@ using aircraft_client.Model.Data;
 using aircraft_client.Model.Formatter;
 using aircraft_client.UI.Interfaces;
 using System;
+using System.Linq;
+using System.Text;
 
 namespace aircraft_client.Logic.Presenters
 {
@@ -35,20 +37,40 @@ namespace aircraft_client.Logic.Presenters
             string query;
             if (typeof(TPresenter) == typeof(DirectorScientistsPresenter))
             {
-                if(item.Split(' ').Length==3)
-                    query = Query.GetExperimentsByScientist(item);
-                else
-                    query = Query.GetLabsListByProduct(item.Split(' ')[0]);
+                query = Query.GetLabsListByProduct(GetRightName(item));
             }
             else if (typeof(TPresenter) == typeof(EquipmentManagerPresenter))
                 query = Query.GetToolsByLaboratory(item);
             else if (typeof(TPresenter) == typeof(JobsPresenter))
-                query = Query.GetJobsByProductName(item.Split(' ')[0]);
-            else if (typeof(TPresenter) == typeof(ProductionPresenter))
-                query = Query.GetTeamsAssembling(item.Split(' ')[0]);
+            {
+                query = Query.GetJobsByProductName(GetRightName(item));
+            }
+            else if (typeof(TPresenter) == typeof(ProductionPresenter)) {
+                query = Query.GetTeamsAssembling(GetRightName(item));
+            }
             else
                 throw new NotImplementedException("Невозможно определить представителя");
             Controller.Run<TPresenter, string>(query);
         }
+
+        private string GetRightName(string data)
+        {
+            var sb = new StringBuilder();
+            var ar = data.Split(' ');
+            ar.ToList().ForEach(n =>
+            {
+                if (n != ar.Last())
+                {
+                    if (n != ar.First())
+                    {
+                        sb.Append(" ");
+                    }
+                    sb.Append(n);
+                }
+            });
+            return sb.ToString();
+        }
     }
+
+    
 }

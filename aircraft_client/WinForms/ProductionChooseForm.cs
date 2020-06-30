@@ -28,7 +28,7 @@ namespace aircraft_client.WinForms
                         var button=ChoosenPlaceBox.Controls.OfType<RadioButton>()
                         .FirstOrDefault(it => it.Text == "Участок");
 
-                        button.Enabled = !n.Equals(ProdTypeButton);
+                        button.Enabled = !n.Equals(ProdTypeButton) && !n.Equals(ProdButton);
                         button.Checked = false;
 
                         CategoryBox.Controls.OfType<RadioButton>()

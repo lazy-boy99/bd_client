@@ -39,7 +39,7 @@ namespace aircraft_client.Model.Formatter
             public static string Get(string field, string table, string subQuery, string choosenFields)=>
                 Get(field, table)+" "+Where(choosenFields,subQuery);
 
-            public static string Union(List<string> fields, List<string> tables)
+            public static string Union(List<string> fields, List<string> tables,bool annotation=true)
             {
                 var selectTables=new List<string>();
                 tables.ForEach(item =>
@@ -47,10 +47,13 @@ namespace aircraft_client.Model.Formatter
                     StringBuilder sb = new StringBuilder();
                     sb.Append("Select ");
                     sb.Append(ConvertFields(fields));
-                    sb.Append(",'");
-                    sb.Append(item);
-                    sb.Append("'");
-                    sb.Append(" as type");
+                    if (annotation)
+                    {
+                        sb.Append(",'");
+                        sb.Append(item);
+                        sb.Append("'");
+                        sb.Append(" as type");
+                    }
                     sb.Append(" from ");
                     sb.Append(item);
                     selectTables.Add(sb.ToString());
